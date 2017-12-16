@@ -18,7 +18,7 @@ $font-size-14: 0.875em;
 $font-size-15: 0.9375em;
 $font-size-16: 16px;
 $font-size-17: 1.0625em;
-$font-size-18: 1.125em;
+$font-size-18: 1rem;
 $font-size-26: 26px;
 $line-height: 1.8;
 
@@ -63,12 +63,14 @@ $btn-circle-radius: 20px;
 $btn-box-shadow: 0 2px 3px rgba(0, 0, 0, 0.125) inset;
 $btn-default-padding: 6px 12px;
 
-$btn-circle-padding: 0 20px;
-$btn-circle-padding-sm: 3px 20px;
+$btn-circle-padding: 7px 25px;
+$btn-circle-padding-md: 0 18px;
 $btn-default-font-size: 14px;
+$btn-md-font-size: 16px;
+$btn-md-font-size: 16px;
 $btn-sm-padding: 3px 10px;
 $btn-sm-font-size: 12px;
-$btn-lg-padding: 10px 20px;
+$btn-lg-padding: 12px 73px;
 $btn-lg-font-size: 16px;
 $btn-default-color: #333;
 $btn-default-border: 1px solid #dedede;

@@ -8,6 +8,61 @@
 		border-top-right-radius:0;
 		border-bottom-right-radius:0;
 	}
+	&.label-taro{
+		color: #fff;
+		background-color: $taro-color;
+	}
+	&.r4{
+		border-radius: 4px;
+	}
+}
+.label-border{
+	padding: 4px 15px;
+  	border-radius: 15px;
+  	font-size:16px;
+  	color: $pri-color;
+
+	&.border-rclr{
+		border-top-right-radius:0;
+		border-bottom-right-radius:0;
+	}
+	&.label-taro{
+		color: $taro-color;
+		border:1px solid $taro-color;
+	}
+	&.r4{
+		border-radius: 4px;
+	}
+}
+.label-mini{
+	height: 22px;
+	width: 50px;
+	border-radius: 4px;
+	font-size:12px;
+	margin-right:10px;
+	text-align:center;
+}
+.italic-label{
+	position: relative;
+	overflow:hidden;
+	.label-sm{
+		position: absolute;
+	    bottom: 1px;
+	    right: -31px;
+	    font-size: 10px;
+	    height: 20px;
+	    line-height: 0px;
+	    width: 100px;
+	    color: #482929;
+	    text-align: center;
+	    letter-spacing: 1.71px;
+    	background-color: #ffd733;
+	    transform: rotate(-30deg);
+	    -ms-transform: rotate(-30deg);
+	    -webkit-transform: rotate(-30deg);
+	    -moz-transform: rotate(-30deg);
+	    -o-transform: rotate(-30deg);
+	}
 }
 // .label-border{
 // 	font-size: 14px;

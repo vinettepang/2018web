@@ -38,6 +38,9 @@
 }
 
 .table-bordered {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
     border: 1px solid $tb-border-color;
     > {
         thead > tr > th,
@@ -46,12 +49,49 @@
         thead > tr > td,
         tbody > tr > td,
         tfoot > tr > td {
+            padding: 13px 10px;
+            height: 50px;
+            line-height:1.4;
             border: 1px solid $tb-border-color;
+        }
+        tbody tr td{
+            &.border-top{
+                border:none;
+                border-right: 1px solid $tb-border-color;
+            }
+            &.border-dashed{
+                border:none;
+                border-top:1px dashed $tb-border-color;
+                border-right: 1px solid $tb-border-color;
+            }
+            &:last-child{
+                padding: 13px 20px; 
+            }
         }
         thead > tr > {
             th,
             td {
                 border-bottom-width: 2px;
+            }
+        }
+    }
+
+    &.col2{
+        tr:last-child{
+            td{
+                vertical-align: top;
+                padding: 13px 70px 26px 70px;
+                .box{
+                    ul{
+                        list-style-type: disc;
+                        display: inline-block;
+                        margin-bottom: 90px;
+                        font-size: 16px;
+                        line-height: 1.63;
+                        text-align: left;
+                        color: #191919;
+                    }
+                }
             }
         }
     }

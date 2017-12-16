@@ -1,0 +1,296 @@
+@charset "utf-8";
+
+header{
+  width: 100%;
+  height: 56px;
+  background-color: rgba(0, 0, 0, 0.7);
+  .navbar{
+    width: 1000px;
+    height: 100%;
+    position: relative;
+    margin: 0 auto;
+    .chatBox{
+      line-height: 56px;
+      position: absolute;
+      right: 65.8px;
+      color: #fff;
+    }
+    .mianAvater{
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      position: absolute;
+      top: 10px;
+      right: 0px;
+      cursor: pointer;
+    }
+    .loginOrRegister{
+      line-height: 56px;
+      position: absolute;
+      right: 0px;
+      a{
+        font-size: 18px;
+        color: #fff;
+      }
+      .login{
+        margin-right: 47px;
+      }
+    }
+    .message-box{
+      width: 380px;
+      height: 412px;
+      position: absolute;
+      top: 58px;
+      right: 0px;
+      z-index: 200;
+      border: 1px solid #eaeaea; 
+      border-radius: 5px;
+      background-color: #ffffff;
+      .triangle{
+        width: 50px;
+        height: 20px;
+        position: absolute;
+        top: -16px;
+        right: 42px;
+        background: url(../images/triangle.png) no-repeat;
+        background-size: 40px 16px;
+      }
+      .main{
+        line-height: 56px;
+        border-bottom: 1px solid #eaeaea; 
+        .title{
+          font-weight: 500;
+          margin-left: 30px;
+        }
+      }
+      .content{
+        width: 100%;
+        height: 270px;
+        margin: 30px 30px 10px 30px;
+        overflow: hidden;
+        .item{
+          position: relative;
+          padding-bottom: 30px;
+          .avater{
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+          }
+          .name{
+            position: absolute;
+            left: 60px;
+            top: 0px;
+            line-height: 0.94;
+          }
+          .detail{
+            position: absolute;
+            left: 60px;
+            top: 25px;
+            line-height: 1.07;
+            color: #949494;
+            font-size: 14px;
+            .strong{
+              color: #000;
+            }
+          }
+        }
+      }
+      .footer{
+        width: 100%;
+        height: 46px;
+        line-height: 40px;
+        font-weight: 500;
+        border-top: 1px solid #eaeaea;
+        position: relative;
+        .set{
+          position: absolute;
+          left: 30px;
+        }
+        .seeAll{
+          position: absolute; 
+          right: 30px;
+        }
+      }
+    }
+    .center-box{
+      width: 140px;
+      height: 110px;
+      position: absolute;
+      top: 58px;
+      right: -55px;
+      z-index: 200;
+      border: 1px solid #eaeaea; 
+      border-radius: 5px;
+      background-color: #ffffff;
+      padding: 18px 28px;
+      text-align: center;
+      .triangle{
+        width: 50px;
+        height: 20px;
+        position: absolute;
+        top: -11px;
+        right: 32px;
+        background: url(../images/triangle.png) no-repeat;
+        background-size: 30px 12px;
+      }
+      .btn-center{
+        display: block;
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
+#box{
+  width: 100%;
+  .section{
+    width: 1000px;
+    height: 100%;
+    margin: 0 auto;
+  }
+}
+
+/* 登录注册模态框 */
+.modal{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(25, 25, 25, 0.2);
+  z-index: 200;
+  .loginAlert, .registerAlert{
+    width: 454px;
+    height: 282px;
+    position: relative;
+    background-color: #fff;
+    border-radius: 12px;
+    text-align: center;
+    .btn-close{
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+  }
+  .loginAlert{
+    .weixinImg{
+      width: 160px;
+      height: 160px;
+      display: block;
+      margin: 40px auto 18px auto;
+      background-color: #d8d8d8;
+    }
+    .about{
+      font-size: 18px;
+      line-height: 1.33;
+    }
+  }
+  .registerAlert{
+    .title{
+      margin-top: 30px;
+      font-size: 18px;
+      line-height: 1.33;
+    }
+    .number .ivu-input{
+      width: 256px;
+      height: 40px;
+      margin-top: 24px;
+    }
+    .group{
+      margin: 14px 0;
+    }
+    .verifyCode{
+      width: 150px;
+      display: inline-block;
+    }
+    .verifyCode .ivu-input{
+      height: 40px;
+    }
+    .btn-getCode{
+      width: 100px;
+      height: 40px;
+      display: inline-block;
+      background-color: #d8d8d8;
+      font-size: 14px;
+    }
+    .btn-okOrCreate{
+      width: 256px;
+      height: 46px;
+      background-color: #d8d8d8;
+      font-size: 14px;
+    }
+  }
+}
+
+.btnGroup-buy{
+  position: relative;
+  margin-top: 10px;
+  background-color: red;
+  .btn-group{
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  .btn-buy{
+    padding: 0px;
+    background-color: #d8d8d8;
+    font-size: 18px;
+    color: #000;
+    text-align: center;
+    span{
+      padding: 8px 18px;
+      display: block;
+    }
+  }
+  .notLoginAlert{
+    width: 440px;
+    height: 282px;
+    position: absolute;
+    top: 61px;
+    left: 0px;
+    padding: 34px 40px;
+    border-radius: 2px;
+    background-color: #ffffff;
+    box-shadow: 0 0 1px 0 #b0b0b0;
+    .trangle{
+      width: 50px;
+      height: 20px;
+      position: absolute;
+      top: -20px;
+      right: 40px;
+      background: url(../images/triangle.png);
+    }
+    .weixinImg{
+      width: 200px;
+      height: 200px;
+      display: inline-block;
+      background-color: #d8d8d8;
+    }
+    .about{
+      margin-left: 11px; 
+      vertical-align: top;
+      display: inline-block;
+      p{
+        font-size: 18px;
+        line-height: 1.67;
+        color: #949494;
+      }
+    }
+  }
+}
+
+.messageBox-enter-active, .messageBox-leave-active{
+  transition: all .5s ease;
+}
+.messageBox-enter, .messageBox-leave-to{
+  opacity: 0;
+}
+.centerBox-enter-active, .centerBox-leave-active{
+  transition: all .5s ease;
+}
+.centerBox-enter, .centerBox-leave-to{
+  opacity: 0;
+}
+

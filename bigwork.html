@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="UTF-8">
+    <title>白熊求助助手</title>
+    <meta name="description" content="账号登录">
+  	<meta name="keyword" content="白熊求助助手，网申助手，应届生求职，应届生网申，求职攻略，网申简历">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport"  content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" >
+	<!-- <meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="format-detection" content="telephone=no">
+	<meta  name="format-detection"content="email=no">
+	<meta name="theme-color" content="#ffffff">
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+	<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+	<link rel="manifest" href="/manifest.json">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#482929"> -->
+	<!-- import stylesheet -->
+	<link rel="stylesheet" href="http://unpkg.com/iview/dist/styles/iview.css">
+	<link rel="stylesheet" href="src/css/iconstyle.css">
+	<!-- <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>-->
+	<link rel="stylesheet" href="src/css/app.css">
+	<script src="http://vuejs.org/js/vue.min.js"></script>
+	<script src="http://unpkg.com/iview/dist/iview.min.js"></script>
+	</head>
+<body>
+
+<div id="app">
+	
+	<header>
+        <i-menu mode="horizontal" theme="dark" active-name="1">
+	        <div class="container">
+                <div class="layout-logo"><img src="https://icebear.me/Public/Home/images/logo-b.png" style=" width: 134px; height: 35.8px;"></div>
+                <div class="layout-nav">
+                    <menu-item name="1">
+                        <a>学院</a>
+                    </menu-item>
+                    <menu-item name="2">
+                        <a>求职</a>
+                    </menu-item>
+                </div>
+                <div class="layout-right pull-right">
+                 <a href="" class="btn btn-md btn-secondary">我的课程</a>
+                  <Icon type="chatbox"></Icon>
+
+                  <Dropdown>
+                  <img src="https://icebear-1-001.oss-cn-shenzhen.aliyuncs.com/uploads/head/2017-03-16/58c9f7db5462c.png" class="user-head">
+                  <dropdown-menu slot="list">
+                      <dropdown-item>个人中心</dropdown-item>
+                      <dropdown-item>登出</dropdown-item>
+                  </dropdown-menu>
+	              </Dropdown>
+	            </div>
+            </div>
+        </i-menu>
+    </header>
+
+    <div class="container">
+		<div class="main-content v-time-wrap">
+	        	<div class="card-box narrow">
+					<div class="v-flex-start">
+	        			<h3 class="pri-title">产品经理·理论课</h3>
+	        			<a class="btn-circle btn-primary" href="">返回课程</a>
+	        		</div>
+	        	</div>
+				<div class="card-box small narrow">
+					<div class="border-box">
+						<h4>作业：</h4>
+						<p class="ft14">任选一款 App，撰写一份产品分析报告。</p>
+					</div>
+					
+					<h4>我的作业：</h4>
+					<p class="tips">*作业格式为 pdf，最大 5 MB</p>
+					<h4 v-if="uploadStatus === true"><span>一份作业.pdf</span><i class="p-l-20" @click="deleteUpload">删除</i></h4>
+					 <Upload
+				        multiple
+				        action="http://local.icebear.me/File/uploadPicture"
+				        :on-success="handleSuccess"
+				        :format="['pdf','js']"
+				        :max-size="2048"
+				        :on-format-error="handleFormatError"
+				        :on-exceeded-size="handleMaxSize">
+				        <Button class="btn-circle btn-primary"  type="ghost" icon="ios-cloud-upload-outline"><span v-if="uploadStatus === true">重新上传</span><span v-else>上传作业</span></Button>
+				    </Upload>
+				</div>
+				<div class="card-box small narrow">
+					<div class="v-flex-between m-b-25">
+						<div>
+							<span class="circle-head"><img src=""></span>
+							<span class="t20">三金 老师点评：</span>
+						</div>
+						<span>2017-11-06</span>
+					</div>
+					
+					<!-- <div id="audioControl">  
+					    <div class="play" @click="sPlay($event)" data-rel="src/audio/DNA.flac">  
+					        <span id="play">Play</span>
+					        
+					    </div>  
+					</div> 
+					<div >  
+					    <div class="play" @click="sPlay($event)" data-rel="src/audio/Beautiful.mp3">  
+					        <span id="play">Play</span>
+					    </div>  
+					</div> 
+					<audio id="media" controls="controls" :src="realRel">
+					Your browser does not support the audio element.
+					</audio>   -->
+					<div class="v-readmore-box without-margin">
+						<p>我是PT老师，很高兴能收到你的产品大作业，下面我说一下这篇分析报告的一些建议：</p>
+						<p>1：缺少行业分析，行业分析是产品开头，总结整个行业，以及看出整个产品，潜力市场的一部分，建议加上。</p>
+						<p>2：在分析产品时，写的还可以，可以拉上几个竞品，在产品形态上做一下横向比较，可以更加清楚的看清产品的功能比较，分析出优劣。</p>
+						<img src="https://icebear-1-001.oss-cn-shenzhen.aliyuncs.com/uploads/picture/2016-12-05/58455a08112d6.png" class="fullwd">
+						<p>3：在产品细节分析上面，多些一些产品体验上的个人建议，突出个人见解及产品能力。</p>
+						<p>4：加上目录会好一些，便于翻阅，也是整体性的体现。</p>
+						<p>我是PT老师，很高兴能收到你的产品大作业，下面我说一下这篇分析报告的一些建议：</p>
+						<p>1：缺少行业分析，行业分析是产品开头，总结整个行业，以及看出整个产品，潜力市场的一部分，建议加上。</p>
+						<p>2：在分析产品时，写的还可以，可以拉上几个竞品，在产品形态上做一下横向比较，可以更加清楚的看清产品的功能比较，分析出优劣。</p>
+						<p>3：在产品细节分析上面，多些一些产品体验上的个人建议，突出个人见解及产品能力。</p>
+						<p>4：加上目录会好一些，便于翻阅，也是整体性的体现。</p>
+					</div>
+					<div class="v-readmore"></div>
+					
+					<h4>附件：<span>一份作业.pdf</span></h4>
+					<a href="" class="btn-circle btn-primary">下载附件</a>
+				</div>
+				
+	        </div>
+    		<div class="right-side">
+	        	<aside class="aside-card" style="height: auto">
+	        		<div class="aside-border-head">
+	        			<p>直播日历</p>
+	        			<p><span class="label"></span>9月1日 20:00 (周四)</p>
+	        			<p><span class="label"></span>9月1日 20:00 (周四)</p>
+	        			<p><span class="label"></span>9月1日 20:00 (周四)</p>
+	        		</div>
+	        		<div class="aside-border-body">
+	        			<p class="bold title">大作业截止时间</p>
+	        			<p>9月1日</p>
+	        			<a class="btn-circle btn-lg btn-secondary">提交作业</a>
+	        		</div>
+	        	</aside>
+	        	<aside class="aside-box">
+	        		课程配套资料包下载
+	        	</aside>
+	        </div>
+	    </div>
+      	
+    </div>
+</div>
+<script type="text/javascript" src="src/plugin/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="src/js/ice_tools.js"></script>
+<script> 
+    let vm  = new Vue({
+        el: '#app',
+        data: {
+            visible: false,
+            uploadStatus:true,
+            isTabsActive:'3',
+            media : $('#media')[0],
+            audioTimer : null,
+            realRel:''
+        },
+        methods: {
+            changeTabs:function (e) {
+            	this.isTabsActive = e.target.dataset.index;
+            },
+            handleSuccess (res, file) {
+                file.url = 'https://o5wwk8baw.qnssl.com/7eb99afb9d5f317c912f08b5212fd69a/avatar';
+                file.name = '7eb99afb9d5f317c912f08b5212fd69a';
+            },
+            handleFormatError (file) {
+            	console.log(this.uploadStatus);
+                this.$Notice.warning({
+                    title: 'The file format is incorrect',
+                    desc: 'File format of ' + file.name + ' is incorrect, please select jpg or png.'
+                });
+            },
+            handleMaxSize (file) {
+                this.$Notice.warning({
+                    title: 'Exceeding file size limit',
+                    desc: 'File  ' + file.name + ' is too large, no more than 2M.'
+                });
+            },
+            deleteUpload(){
+            	this.$Modal.confirm({
+                    title: '确认删除？',
+                    content: '<p>是否确认删除上传内容</p>',
+                    onOk: () => {
+                        this.$Message.info('Clicked ok');
+                    },
+                    onCancel: () => {
+                        this.$Message.info('Clicked cancel');
+                    }
+                });
+            },
+            playAudio() {  
+            	var audioPlayer = this.$el.getElementsByTagName("audio")[0];
+            	if (this.paused) {
+            		audioPlayer.play();
+            	}else{
+            		audioPlayer.pause();
+            	}
+            	this.paused = !this.paused;
+			},
+			pause() {  
+			    media.pause();  
+			    $('#play').html('Play');  
+			},
+			play() {  
+				media.pause(); 
+			    media.play();  
+			    $('#play').html('Pause');  
+			},
+			sPlay:function (e) {
+				
+				src = e.target.dataset.rel;
+				console.log(src);
+				this.realRel = src;
+				//$('media').attr('data-rel', src);
+				//media = $(this).find('audio').attr('src');
+			   	//this.media = $('#media')[0];
+			    this.playAudio();  
+			}     
+        }
+    })
+  </script>
+<!-- {/* 页面主体 */} -->
+
+
+
+<!-- <script src="__JQUERY__"></script> -->
+
+<script>
+// $(function(){
+	
+// })
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="UTF-8">
+  <title>白熊求助助手</title>
+  <meta name="description" content="账号登录">
+  <meta name="keyword" content="白熊求助助手，网申助手，应届生求职，应届生网申，求职攻略，网申简历">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport"  content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" >
+  <!-- <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no">
+  <meta  name="format-detection"content="email=no">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#482929"> -->
+  <!-- import stylesheet -->
+  <link rel="stylesheet" href="http://unpkg.com/iview/dist/styles/iview.css">
+  <link rel="stylesheet" href="src/css/iconstyle.css">
+  <link rel="stylesheet" href="src/css/app.css">
+  <script src="http://vuejs.org/js/vue.min.js"></script>
+  <script src="http://unpkg.com/iview/dist/iview.min.js"></script>
+  </head>
+<body>
+  <div id="userCenetr">
+    <header>
+      <i-menu mode="horizontal" theme="dark" active-name="1">
+      <div class="container">
+              <div class="layout-logo"><img src="https://icebear.me/Public/Home/images/logo-b.png" style=" width: 134px; height: 35.8px;"></div>
+              <div class="layout-nav">
+                  <menu-item name="1">
+                      <a>学院</a>
+                  </menu-item>
+                  <menu-item name="2">
+                      <a>求职</a>
+                  </menu-item>
+              </div>
+              <div class="layout-right pull-right">
+                <a href="" class="btn btn-md btn-secondary">我的课程</a>
+                <a href="javascript:void(0)" @click.stop="_messageBoxShow">
+                <Icon type="chatbox" id="messageBoxShow"></Icon>
+              </a>
+                <Dropdown>
+                <img  id="centerBoxShow" src="https://icebear-1-001.oss-cn-shenzhen.aliyuncs.com/uploads/head/2017-03-16/58c9f7db5462c.png" class="user-head">
+                <dropdown-menu slot="list">
+                    <dropdown-item>个人中心</dropdown-item>
+                    <dropdown-item>登出</dropdown-item>
+                </dropdown-menu>
+            </Dropdown>
+              </div>
+              
+               <!-- 消息通知弹出框 -->
+        <!-- <transition name="messageBox"> -->
+        <div class="message-box" style="display: none">
+          <div class="triangle"></div>
+          <div class="main">
+            <span class="title">通知</span>
+          </div>
+          <ul class="content">
+            <li class="item">
+              <img class="avater" src="https:////icebear-1-001.oss-cn-shenzhen.aliyuncs.com/uploads/head/2017-03-16/58c9f7db5462c.png"
+                alt="">
+              <span class="name">Lee<span class="teaLevel">白熊讲师</span></span>
+              <span class="detail">今日学习任务：<span class="strong">产品经理·理论课</span></span>
+            </li>
+            <li class="item">
+              <img class="avater" src="https:////icebear-1-001.oss-cn-shenzhen.aliyuncs.com/uploads/head/2017-03-16/58c9f7db5462c.png"
+                alt="">
+              <span class="name">Lee<span class="teaLevel">白熊讲师</span></span>
+              <span class="detail">今日学习任务：<span class="strong">产品经理·理论课</span></span>
+            </li>
+            <li class="item">
+              <img class="avater" src="https:////icebear-1-001.oss-cn-shenzhen.aliyuncs.com/uploads/head/2017-03-16/58c9f7db5462c.png"
+                alt="">
+              <span class="name">Lee<span class="teaLevel">白熊讲师</span></span>
+              <span class="detail">今日学习任务：<span class="strong">产品经理·理论课</span></span>
+            </li>
+          </ul>
+          <div class="footer">
+            <span class="set">设置</span>
+            <span class="seeAll">查看全部通知</span>
+          </div>
+        </div>
+        <!-- </transition> -->
+
+        <!-- 个人中心弹窗 -->
+        <!-- <transition name="centerBox"> -->
+        <div class="center-box" style="display: none">
+          <div class="triangle"></div>
+          <a href="./user_center.html" class="btn-center">个人中心</a>
+          <a class="btn-loginout">登出</a>
+        </div>
+        <!-- </transition> -->
+          </div>
+      </i-menu>
+    </header>
+    <div class="section">
+      <div class="main">
+        <div class="container" ref="container">
+          <img class="avater" src="https:////icebear-1-001.oss-cn-shenzhen.aliyuncs.com/uploads/head/2017-03-16/58c9f7db5462c.png"
+            alt="">
+          <div class="ice-message">
+            <span class="name">用户昵称</span>
+            <span class="vip">白熊 VIP</span>
+            <span class="number">白熊号 18588235006</span>
+          </div>
+
+          <transition name="message">
+            <div class="message" v-show="detailShow&&!setDetailShow">
+              <span class="school">
+              <Icon type="android-pin"></Icon>  
+              北京师范大学珠海分校
+              </span>
+              <span class="level">
+                <Icon type="university"></Icon>
+                艺术类  |  大三
+              </span>
+              <span class="company">
+                <Icon type="heart"></Icon>
+                互联网  |  腾讯、京东  
+              </span>
+              <span class="seeDetail" @click="_detailShow()">
+                查看详情&nbsp;
+                <Icon type="chevron-down"></Icon>
+              </span>
+            </div>
+          </transition>
+          <transition name="detail">
+            <div class="detail" v-show="!detailShow&&!setDetailShow" style="display: none">
+              <span><strong>学校</strong>北京师范大学珠海分校</span>
+              <span><strong>专业</strong>艺术类</span>
+              <span><strong>年级</strong>大三</span>
+              <span><strong>感兴趣的行业</strong>互联网</span>
+              <span><strong>意向公司</strong>腾讯、京东</span>
+              <span class="seeDetail" @click="_detailShow()">
+              查看详情&nbsp;
+              <Icon type="chevron-up"></Icon>
+              </span>
+            </div>
+          </transition>
+          <transition name="setDetail">
+            <div class="setDetail" v-show="setDetailShow" style="display: none">
+              <span>
+                <strong>学校</strong>
+                <i-select v-model="schoolModel" style="width:200px" size="small" filterable>
+                  <i-option v-for="item in schoolList" :value="item.value" :key="item.value">{{ item.label }}</i-option>
+                </i-select>
+              </span>
+              <span>
+                <strong>专业</strong>
+                <i-select v-model="subjectModel" style="width:200px" size="small" filterable>
+                  <i-option v-for="item in subjectList" :value="item.value" :key="item.value">{{ item.label }}</i-option>
+                </i-select>
+              </span>
+              <span>
+                <strong>年级</strong>
+                <i-select v-model="gradeModel" style="width:200px" size="small" filterable>
+                  <i-option v-for="item in gradeList" :value="item.value" :key="item.value">{{ item.label }}</i-option>
+                </i-select>
+              </span>
+              <span>
+                <strong>感兴趣的行业</strong>
+                <i-select v-model="subjectModel" style="width:200px" size="small" filterable>
+                  <i-option v-for="item in subjectList" :value="item.value" :key="item.value">{{ item.label }}</i-option>
+                </i-select>
+              </span>
+              <span>
+                <strong>意向公司</strong>
+                <i-select v-model="companyModel" style="width:200px" size="small" filterable>
+                  <i-option v-for="item in companyList" :value="item.value" :key="item.value">{{ item.label }}</i-option>
+                </i-select>
+              </span>
+            </div>
+          </transition>
+
+          <i-button class="editUserMess" @click="_setDetailShow()">{{setDetailContent}}</i-button>
+        </div>
+      </div>
+
+      <div class="content">
+        <Tabs value="myCourses" :animated="false" class="userTabs">
+          <Tab-Pane name="myCourses" label="我的课程">
+            <ul class="myCourses">
+              <li class="myCouItem">
+                <span class="title">新媒体系列课</span>
+                <div class="btn-left">
+                  <i-button icon="ios-book-outline" shape="circle">资料包</i-button>
+                  <i-button icon="clipboard" shape="circle">课表</i-button>
+                </div>
+                <span class="type">自学班</span>
+                <div class="timeBar">
+                  <span class="line"></span>
+                  <ul class="timeWrapper">
+                    <li class="timeItem">
+                      <span class="outerRing"><span class="innerRing"></span></span>
+                      <p class="date">DAY1</p>
+                    </li>
+                    <li class="timeItem">
+                      <span class="outerRing"><span class="innerRing"></span></span>
+                      <p class="date">2</p>
+                    </li>
+                    <li class="timeItem">
+                      <span class="outerRing"><span class="innerRing"></span></span>
+                      <p class="date">3</p>
+                    </li>
+                    <li class="timeItem">
+                      <span class="outerRing"><span class="innerRing"></span></span>
+                      <p class="date">4</p>
+                    </li>
+                    <li class="timeItem">
+                      <span class="outerRing"><span class="innerRing"></span></span>
+                      <p class="date">5</p>
+                    </li>
+                    <li class="timeItem">
+                      <span class="outerRing"><span class="innerRing"></span></span>
+                      <p class="date">6</p>
+                    </li>
+                    <li class="timeItem">
+                      <span class="outerRing"><span class="innerRing"></span></span>
+                      <p class="date">7-8</p>
+                    </li>
+                    <li class="timeItem">
+                      <span class="outerRing"><span class="innerRing"></span></span>
+                      <p class="date">9</p>
+                    </li>
+
+                  </ul>
+                </div>
+                <span class="limiteTime">有效期至 2018.9.12</span>
+                <i-button class="btn-startStudy" shape="circle">开始学习 0/35</i-button>
+              </li>
+              <li class="myCouItem">
+                <span class="title">面试系列课</span>
+                <span class="limiteTime">有效期至 2018.02.21</span>
+                <i-button class="btn-startStudy" shape="circle">开始学习 0/35</i-button>
+              </li>
+            </ul>
+          </Tab-Pane>
+          <Tab-Pane name="myOrder" label="我的订单">
+            <ul class="myOrder">
+              <li class="myOrHeader">
+                <span class="title">课程名称</span>
+                <span class="price">价格</span>
+                <span class="state">课程状态</span>
+              </li>
+              <li class="myOrItem">
+                <div class="title">
+                  <p class="name">产品经理·理论课</p>
+                  <span class="type">训练营</span>
+                  <p class="number">订单号：24982371201</p>
+                </div>
+                <div class="price">
+                  <p class="currentPri">¥ 299.00</p>
+                  <p class="pastPri">¥ 399.00</p>
+                </div>
+                <div class="state">
+                  <p>等待拼团</p>
+                </div>
+              </li>
+              <li class="myOrItem">
+                <div class="title">
+                  <p class="name">面试系列课</p>
+                  <p class="number">订单号：24982371201</p>
+                </div>
+                <div class="price">
+                  <p class="currentPri">¥ 299.00</p>
+                </div>
+                <div class="state">
+                  <p>等待拼团</p>
+                </div>
+              </li>
+            </ul>
+          </Tab-Pane>
+          <Tab-Pane name="setting" label="通知设置" class="setting">
+            <ul class="stuSetting">
+              <li class="item">
+                <span class="option">学习打卡提醒</span>
+                <i-switch>
+                  <span slot="close">开</span>
+                  <span slot="open">关</span>
+                </i-switch>
+              </li>
+              <li class="item">
+                <span class="option">求职订阅提醒</span>
+                <i-switch>
+                  <span slot="close">开</span>
+                  <span slot="open">关</span>
+                </i-switch>
+              </li>
+            </ul>
+
+          </Tab-Pane>
+        </Tabs>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript">
+    new Vue({
+  el: '#userCenetr',
+  data() {
+    return {
+      detailShow: true,
+      setDetailShow: false,
+      setDetailContent: '编辑个人资料',
+      schoolList: [
+        {
+          value: '1',
+          label: '北京师范大学珠海分校'
+        }
+      ],
+      subjectList: [
+        {
+          value: '1',
+          label: '艺术类'
+        }
+      ],
+      gradeList: [
+        {
+          value: '1',
+          label: ' 大三'
+        }
+      ],
+      industryList: [
+        {
+          value: '1',
+          label: '互联网'
+        }
+      ],
+      companyList: [
+        {
+          value: '1',
+          label: '腾讯、京东'
+        }
+      ],
+      schoolModel: '1',
+      subjectModel: '1',
+      gradeModel: '1',
+      industryModel: '1',
+      companyModel: '1',
+    }
+  },
+  methods: {
+    _detailShow() {
+      this.detailShow = !this.detailShow
+      if (!this.detailShow) {
+        this.$refs.container.style.height = '268px'
+      } else {
+        this.$refs.container.style.height = '180px'
+      }
+    },
+    _setDetailShow() {
+      this.setDetailShow = !this.setDetailShow
+
+      if (this.setDetailShow) {
+        this.setDetailContent = '保存'
+        this.$refs.container.style.height = '248px'
+      }
+      else if (!this.detailShow && !this.setDetailShow) {
+        this.setDetailContent = '编辑个人资料'
+        this.$refs.container.style.height = '268px'
+      }
+      else {
+        this.setDetailContent = '编辑个人资料'
+        this.$refs.container.style.height = '180px'
+      }
+    }
+  }
+})
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="UTF-8">
+    <title>白熊求助助手</title>
+    <meta name="description" content="账号登录">
+    <meta name="keyword" content="白熊求助助手，网申助手，应届生求职，应届生网申，求职攻略，网申简历">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"  content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" >
+    <!-- <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta  name="format-detection"content="email=no">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#482929"> -->
+    <!-- import stylesheet -->
+    <link rel="stylesheet" href="http://unpkg.com/iview/dist/styles/iview.css">
+    <!-- <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>-->
+    <link rel="stylesheet" href="src/css/app.css">
+    <script src="http://vuejs.org/js/vue.min.js"></script>
+    <script src="http://unpkg.com/iview/dist/iview.min.js"></script>
+  </head>
+<body>
+
+<!-- {/* 页面主体 */} -->
+<div id="app" class="bg-color full-wrap">
+  	<header>
+      <i-menu mode="horizontal" theme="dark" active-name="1">
+        <div class="container">
+                <div class="layout-logo"><img src="https://icebear.me/Public/Home/images/logo-b.png" style=" width: 134px; height: 35.8px;"></div>
+                <div class="layout-nav">
+                    <menu-item name="1">
+                        <a>学院</a>
+                    </menu-item>
+                    <menu-item name="2">
+                        <a>求职</a>
+                    </menu-item>
+                </div>
+                <div class="layout-right pull-right">
+                  <a href="" class="btn btn-md btn-secondary">我的课程</a>
+                  <Icon type="chatbox"></Icon>
+                  <Dropdown>
+                  <img src="https://icebear-1-001.oss-cn-shenzhen.aliyuncs.com/uploads/head/2017-03-16/58c9f7db5462c.png" class="user-head">
+                  <dropdown-menu slot="list">
+                      <dropdown-item>个人中心</dropdown-item>
+                      <dropdown-item>登出</dropdown-item>
+                  </dropdown-menu>
+              </Dropdown>
+                </div>
+            </div>
+        </i-menu>
+    </header>
+
+    <div class="container640 card-list">
+      	<p class="list-inline"><label>课程名称：</label><span>产品经理·笔试课-自学班</span></p>
+      	<p class="list-inline"><label>课程有效时间：</label><span>2017年9月20日-2019年9月20日</span></p>
+      	<p class="list-inline"><label>课程价格：</label><span>¥299</span></p>
+      	<p class="m-b-20"><label>支付方式：</label></p>
+      	<ul class="pay-methods">
+      		<li @click.native="payMethod($event)">支付宝</li>
+	      	<li @click.native="payMethod($event)">微信</li>
+	      	<li @click.native="payMethod($event)">京东</li>
+	    </ul>
+	    <a href="" class="btn-circle btn-bigger">立即购买</a>
+    </div>
+    <div class="container640 card-list">
+      	<div class="card-status">
+      		<i>√</i>
+      		<p>购买成功</p>
+      	</div>
+	    <a href="" class="btn-circle btn-bigger">完善学员资料</a>
+    </div>
+</div>
+<script>
+    let vm  = new Vue({
+        el: '#app',
+        data: {
+        },
+        methods: {
+            payMethod(e){
+            	console.log(e.target.dataset)
+            }
+        }
+    })
+  </script>
+<!-- {/* 页面主体 */} -->
+
+
+
+<!-- <script src="__JQUERY__"></script> -->
+
+<script>
+// $(function(){
+	
+// })
+</script>
+
+
+</body>
+</html>

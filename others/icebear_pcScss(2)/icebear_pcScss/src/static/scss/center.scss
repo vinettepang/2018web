@@ -1,0 +1,356 @@
+@charset "utf-8";
+
+#userCenetr{
+  width: 100%;
+  .section{
+    width: 100%;
+    .main{
+      width: 100%;
+      box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+      background-color: #fff;
+      .container{
+        width: 1000px;
+        margin: 0 auto;
+        display: flex;
+        padding: 30px;
+        position: relative;
+        .editUserMess{
+          width: 140px;
+          height: 36px;
+          position: absolute;
+          bottom: 30px;
+          right: 0;
+          border-radius: 4px;
+          background-color: #f4f4f4;
+        }
+      }
+      .avater{
+        width: 120px;
+        height: 120px;
+        border-radius: 6px;
+        flex: 0 0 120px;
+        margin-right: 30px;
+      }
+      .ice-message span, .message span{
+        display: block;
+      }
+      .ice-message{
+        flex: 0 0 210px;
+        .name{
+          font-size: 20px;
+          font-weight: 500;
+          line-height: 1.2;
+        }
+        .vip{
+          width: 76px;
+          line-height: 24px;
+          display: inline-block;
+          margin: 8px 0 22px;
+          text-align: center;
+          border-radius: 3px;
+          background-color: #d8d8d8;
+          font-size: 14px;
+        }
+        .number{
+          font-size: 10px;
+          line-height: 1.2;
+        }
+      }
+      .detail span, .setDetail span{
+        height: 20px;
+        display: block;
+        font-size: 14px;
+        margin-bottom: 14px;
+        strong{
+          margin-right: 20px;
+        }
+      }
+      .message, .detail, .setDetail{
+        position: absolute;
+        top: 20px;
+        left: 400px;
+      }
+      .message{
+        .ivu-icon{
+          margin-right: 12px;
+        }
+        span{
+          font-size: 14px;
+        }
+        .level{
+          margin: 12px 0;
+        }
+        .seeDetail{
+          margin-top: 18px;
+          color: #949494;
+          font-size: 12px;
+          line-height: 1.17;
+          cursor: pointer;
+        }
+      }
+      .detail{
+        .seeDetail{
+          margin-top: 18px;
+          color: #949494;
+          font-size: 12px;
+          line-height: 1.17;
+          cursor: pointer;
+          margin: 34px 0 0 0;
+        }
+      }
+      .setDetail{
+        .seeDetail{
+          margin-top: 18px;
+          color: #949494;
+          font-size: 12px;
+          line-height: 1.17;
+          cursor: pointer;
+          margin: 34px 0 0 0;
+        }
+      }
+    }
+    .content{
+      width: 1000px;
+      margin: 30px auto 0 auto;
+      .ivu-tabs{
+        width: 100%;
+        overflow: visible;
+        position: relative;
+        .ivu-tabs-bar{
+          width: 270px;
+          border: none;
+        }
+        .ivu-tabs-content{
+          width: calc(100% - 300px);
+          position: absolute;
+          top: 0;
+          left: 300px;
+        }
+      }
+      .ivu-tabs-nav-wrap{
+        padding: 0;
+      }
+      .ivu-tabs-tab{
+        width: 240px;
+        line-height: 36px;
+        display: block;
+        padding-left: 30px;
+        /* border-bottom: 1px solid #949494; */
+        color: #000;
+      }
+      .ivu-tabs-tab-active{
+        color: #fff;
+        border-radius: 6px;
+        background: linear-gradient(-135deg, transparent 18px, #949494 0) top right, linear-gradient(-45deg, transparent 18px, #949494 0) bottom right;
+        background-size: 100% 52%;
+        background-repeat: no-repeat;
+      }
+      .ivu-tabs-ink-bar{
+        height: 0px;
+      }
+      .ivu-tabs-nav-prev, .ivu-tabs-nav-next{
+        display: none;
+      }
+      .myCourses{
+        width: 100%;
+        .myCouItem{
+          width: 100%;
+          position: relative;
+          padding: 20px 30px;
+          border-radius: 12px;
+          background-color: #ffffff;
+          box-shadow: 0 0 1px 0 #b0b0b0;
+          margin-bottom: 14px;
+        }
+        .title{
+          line-height: 33px;
+          font-size: 24px;
+          font-weight: 500;
+        }
+        .btn-left{
+          display: inline-block;
+          position: absolute;
+          top: 20px;
+          right: 30px;
+          .ivu-btn{
+            padding: 7px 18px;
+          }
+        }
+        .type{ 
+          width: 80px;
+          display: block;
+          padding: 4px 16px;
+          margin-top: 12px;
+          background-color: #f4f4f4;
+          border-radius: 15px;
+        }
+        .timeBar{
+          width: calc(100% + 30px);
+          height: 100%;
+          height: 1px;
+          margin: 44px 30px 0 30px;
+          position: relative;
+          .line{
+            width: calc(100% - 100px);
+            height: 1px;
+            position: absolute;
+            top: 1px;
+            left: 5px;
+            background-color: #949494;
+          }
+          .timeWrapper{
+            width: 100%;
+            position: absolute;
+            top: -9px;
+            left: -42px;
+            padding-bottom: 20px;
+          }
+          .timeItem{
+            width: calc(100% / 8 - 5px);
+            display: inline-block;
+            text-align: center;
+            .outerRing{
+              width: 16px;
+              height: 16px;
+              display: inline-block;
+              border: 1px solid #949494;
+              border-radius: 50%;
+              position: relative;
+            }
+            .innerRing{
+              width: 4px;
+              height: 4px;
+              position: absolute;
+              top: 5px;
+              left: 5px;
+              display: inline-block;
+              background-color: #949494;
+              border-radius: 50%;
+            }
+          }
+        }
+        .limiteTime{
+          line-height: 22px;
+          display: block;
+          margin-top: 96px;
+          color: #747474;
+        }
+        .btn-startStudy{
+          position: absolute;
+          bottom: 20px;
+          right: 30px;
+          padding: 8px 18px 7px 18px;
+          border-radius: 20px;
+          background-color: #d8d8d8;
+          font-size: 18px;
+        }
+      }
+      .myOrder{
+        width: 100%;
+        .myOrHeader{
+          display: flex;
+          margin-bottom: 13px;
+          padding: 0 30px;
+          .title{
+            flex: 1;
+            font-size: 14px;
+            line-height: 1.14;
+          }
+          .price{
+            flex: 0 0 100px;
+            font-size: 14px;
+            line-height: 1.14;
+          }
+          .state {
+            flex: 0 0 100px;
+            font-size: 14px;
+            line-height: 1.14;
+          }
+        }
+        .myOrItem{
+          display: flex;
+          width: 100%;
+          padding: 20px 30px;
+          border-radius: 12px;
+          background-color: #ffffff;
+          box-shadow: 0 0 1px 0 #b0b0b0;
+          margin-bottom: 14px;
+          .title{
+            flex: 1;
+            .name{
+              font-size: 18px;
+              font-weight: 500;
+              margin-bottom: 9px;
+            }
+            .type{
+              padding:  6px 14px;
+              border-radius: 12px;
+              background-color: #f4f4f4;
+              font-size: 12px;
+            }
+            .number{ 
+              margin-top: 27px;
+              font-size: 14px;
+              line-height: 1.14;
+              color: #949494;
+            }
+          }
+          .price{
+            flex: 0 0 100px;
+            color: #949494;
+            .pastPri{
+              text-decoration: line-through;
+            }
+          }
+          .state {
+            flex: 0 0 100px;
+          }
+        }
+      }
+      .setting{
+        .stuSetting, .teaSetting{
+          width: 100%;
+          height: 300px;  
+          padding: 30px 30px;
+          border-radius: 12px;
+          background-color: #ffffff;
+          box-shadow: 0 0 1px 0 #b0b0b0;
+          margin-bottom: 14px;
+        }
+        .item{
+          display: flex;
+          margin-bottom: 46px;
+        }
+        .stuSetting .item .option{
+          flex: 0 0 150px;
+        }
+        .teaSetting .item .option{
+          flex: 0 0 200px;
+        }
+      }
+    }
+  }
+}
+
+
+.message-enter-active, .message-leave-active {
+  transition: opacity .2s;
+}
+.message-enter, .message-leave-to{
+  opacity: 0;
+  /* transform: translateY(-100%) */
+}
+.detail-enter-active, .detail-leave-active {
+  transition: all .2s;
+}
+.detail-enter, .detail-leave-to{
+  opacity: 0;
+  /* transform: translateY(-100%) */
+}
+.setDetail-enter-active, .setDetail-leave-active {
+  transition: all .2s;
+}
+.setDetail-enter, .setDetail-leave-to{
+  opacity: 0;
+  /* transform: translateY(-100%) */
+}

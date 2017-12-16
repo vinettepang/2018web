@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="http://unpkg.com/iview/dist/styles/iview.css">
+  <link rel="stylesheet" href="./src/static/css/reset.css">
+  <link rel="stylesheet" href="./src/static/css/app.css">
+  <script src="http://vuejs.org/js/vue.min.js"></script>
+  <script src="http://unpkg.com/iview/dist/iview.min.js"></script>
+  <title>icebear</title>
+</head>
+
+<body>
+  <div id="box">
+    <div class="section">
+      <div class="btnGroup-buy">
+        <div class="btn-group">
+          <i-button shape="circle" class="btn-buy" @click.stop="_notLoginAlertShow">两人拼团 ¥299</i-button>
+          <i-button shape="circle" class="btn-buy" @click.stop="_notLoginAlertShow">单独购买 ¥399</i-button>
+          <i-button shape="circle" class="btn-buy" @click.stop="_notLoginAlertShow">免费试看</i-button>
+          <div class="notLoginAlert" ref="notLoginAlert" v-show="notLoginAlertShow" @click.stop="" style="display: none">
+            <span class="trangle"></span>
+            <img class="weixinImg" src="" alt="">
+            <div class="about">
+              <p>请使用微信扫码</p>
+              <p>登录「白熊求职」</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="./src/static/js/base.js"></script>
+</body>
+</html>

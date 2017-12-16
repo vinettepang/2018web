@@ -17,288 +17,407 @@
 	<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
 	<link rel="manifest" href="/manifest.json">
 	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#482929"> -->
-	<!-- import Vue.js -->
-	<script src="http://vuejs.org/js/vue.min.js"></script>
 	<!-- import stylesheet -->
 	<link rel="stylesheet" href="http://unpkg.com/iview/dist/styles/iview.css">
-	<!-- import iView -->
-	<script src="http://unpkg.com/iview/dist/iview.min.js"></script>
+	<link rel="stylesheet" href="src/css/iconstyle.css">
 	<!-- <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>-->
-
 	<link rel="stylesheet" href="src/css/app.css">
+	<script src="http://vuejs.org/js/vue.min.js"></script>
+	<script src="http://unpkg.com/iview/dist/iview.min.js"></script>
 	</head>
 <body>
 
 <!-- {/* 页面主体 */} -->
 <div id="app">
-	 <i-menu mode="horizontal" theme="dark" active-name="1">
-            <div class="layout-logo"></div>
-            <div class="layout-nav">
-                <menu-item name="1">
-                    <Icon type="ios-navigate"></Icon>
-                    Item 1
-                </menu-item>
-                <menu-item name="2">
-                    <Icon type="ios-keypad"></Icon>
-                    Item 2
-                </menu-item>
-                <menu-item name="3">
-                    <Icon type="ios-analytics"></Icon>
-                    Item 3
-                </menu-item>
-                <menu-item name="4">
-                    <Icon type="ios-paper"></Icon>
-                    Item 4
-                </menu-item>
-            </div>
-    </i-menu>
-    <div class="container1000">
-      	<i-menu class="tabs-menu" mode="horizontal" active-name="1">
+	<header>
+		<i-menu mode="horizontal" theme="dark" active-name="1">
+		 	<div class="container">
+	            <div class="layout-logo"><img src="https://icebear.me/Public/Home/images/logo-b.png" style=" width: 134px; height: 35.8px;"></div>
+	            <div class="layout-nav">
+	                <menu-item name="1">
+	                    <a>学院</a>
+	                </menu-item>
+	                <menu-item name="2">
+	                    <a>求职</a>
+	                </menu-item>
+	            </div>
+	            <div class="layout-right pull-right">
+	            	<a href="" class="btn btn-md btn-secondary">我的课程</a>
+	            	<a href="javascript:void(0)" @click.stop="_messageBoxShow">
+			          <Icon type="chatbox"></Icon>
+			        </a>
+	            	<Dropdown>
+				        <img src="https://icebear-1-001.oss-cn-shenzhen.aliyuncs.com/uploads/head/2017-03-16/58c9f7db5462c.png" class="user-head">
+				        <dropdown-menu slot="list">
+				            <dropdown-item>个人中心</dropdown-item>
+				            <dropdown-item>登出</dropdown-item>
+				        </dropdown-menu>
+	    			</Dropdown>
+	            </div>
+	            <transition name="messageBox">
+			          <div class="message-box" v-show="messageBoxShow" @click.stop="" style="display: none">
+			            <div class="main">
+			              <span class="title">通知</span>
+			            </div>
+			            <ul class="content">
+			              <li class="item">
+			                <img class="avater" src="https:////icebear-1-001.oss-cn-shenzhen.aliyuncs.com/uploads/head/2017-03-16/58c9f7db5462c.png"
+			                  alt="">
+			                <span class="name">Lee<span class="teaLevel">白熊讲师</span></span>
+			                <span class="detail">今日学习任务：<span class="strong">产品经理·理论课</span></span>
+			              </li>
+			              <li class="item">
+			                <img class="avater" src="https:////icebear-1-001.oss-cn-shenzhen.aliyuncs.com/uploads/head/2017-03-16/58c9f7db5462c.png"
+			                  alt="">
+			                <span class="name">Lee<span class="teaLevel">白熊讲师</span></span>
+			                <span class="detail">今日学习任务：<span class="strong">产品经理·理论课</span></span>
+			              </li>
+			              <li class="item">
+			                <img class="avater" src="https:////icebear-1-001.oss-cn-shenzhen.aliyuncs.com/uploads/head/2017-03-16/58c9f7db5462c.png"
+			                  alt="">
+			                <span class="name">Lee<span class="teaLevel">白熊讲师</span></span>
+			                <span class="detail">今日学习任务：<span class="strong">产品经理·理论课</span></span>
+			              </li>
+			            </ul>
+			            <div class="footer">
+			              <span class="set">设置</span>
+			              <span class="seeAll">查看全部通知</span>
+			            </div>
+			          </div>
+			        </transition>
+			        <transition name="centerBox">
+			          <div v-show="centerBoxShow" class="center-box" @click.stop="" style="display: none">
+			            <p class="btn-center">个人中心</p>
+			            <p class="btn-loginout">登出</p>
+			          </div>
+			        </transition>
+	        </div>
+	    </i-menu>
+	</header>
+	<div class="menu">
+    	<i-menu class="tabs-menu" mode="horizontal" active-name="1">
             <div class="layout-assistant">
-                <menu-item name="1" data-index="1" @click.native="changeTabs($event)" v-bind:class="{ active: isTabsActive =='1'}">Option 1</menu-item>
-                <menu-item name="2" data-index="2" @click.native="changeTabs($event)" v-bind:class="{ active: isTabsActive =='2'}">Option 2</menu-item>
-                <menu-item name="3" data-index="3" @click.native="changeTabs($event)" v-bind:class="{ active: isTabsActive =='3'}">Option 3</menu-item>
+                <menu-item name="1" data-index="1" @click.native="changeTabs($event)" v-bind:class="{ active: isTabsActive =='1'}">免费公开课</menu-item>
+                <menu-item name="2" data-index="2" @click.native="changeTabs($event)" v-bind:class="{ active: isTabsActive =='2'}">求职通用课</menu-item>
+                <menu-item name="3" data-index="3" @click.native="changeTabs($event)" v-bind:class="{ active: isTabsActive =='3'}">行业专业课</menu-item>
             </div>
         </i-menu>
-	    <div class="v-tab-pane" v-bind:class="{ active: isTabsActive == '1' }">
-	    	<h3 class="page-title">互联网1</h3>
-		    <Row>
-		        <i-col span="8">
+    </div>
+    <div class="container">
+    	<!-- 免费公开课 -->
+		<transition name="fade">
+	    	<div class="v-tab-pane" v-show="isTabsActive" v-bind:class="{ active: isTabsActive  == '1'}">	
+		    	<nav class="select-menu nav-horizontal">
+		    		<ul>
+		    			<li><a>全部</a></li>
+		    			<li>大牛分享</li>
+		    			<li>行业入门</li>
+		    			<li>职场技能</li>
+		    			<li>兴趣爱好</li>
+		    			<li>高校合作课程</li>
+		    		</ul>
+		    	</nav>
+			    <div class="container">
+			        <div class="main-content">
+			        	<div class="list-theme">
+			        		<a href="javascript:;" class="list-item">
+				                <div class="list-img">
+				                    <img src="#">
+				                </div>
+				                <div class="list-mes v-flex-col">
+				                    <h4 class="list-title">为何「产品运营不分家」</h4>
+				                    <p class="v-flex-1 ft14">腾讯 P4 产品经理</p>
+				                    <div class="v-flex-between ft14">
+				                        <span>29109 人学过</span>
+				                        <span>免费</span>
+				                    </div>
+				                </div>
+				            </a>
+				            <a href="javascript:;" class="list-item">
+				                <div class="list-img">
+				                    <img src="#">
+				                </div>
+				                <div class="list-mes v-flex-col">
+				                    <h4 class="list-title">为何「产品运营不分家」</h4>
+				                    <p class="v-flex-1 ft14">腾讯 P4 产品经理</p>
+				                    <div class="v-flex-between ft14">
+				                        <span>29109 人学过</span>
+				                        <span>免费</span>
+				                    </div>
+				                </div>
+				            </a><a href="javascript:;" class="list-item">
+				                <div class="list-img">
+				                    <img src="#">
+				                </div>
+				                <div class="list-mes v-flex-col">
+				                    <h4 class="list-title">为何「产品运营不分家」</h4>
+				                    <p class="v-flex-1 ft14">腾讯 P4 产品经理</p>
+				                    <div class="v-flex-between ft14">
+				                        <span>29109 人学过</span>
+				                        <span>免费</span>
+				                    </div>
+				                </div>
+				            </a>
+				            <a href="javascript:;" class="list-item">
+				                <div class="list-img">
+				                    <img src="#">
+				                </div>
+				                <div class="list-mes v-flex-col">
+				                    <h4 class="list-title">为何「产品运营不分家」</h4>
+				                    <p class="v-flex-1 ft14">腾讯 P4 产品经理</p>
+				                    <div class="v-flex-between ft14">
+				                        <span>29109 人学过</span>
+				                        <span>免费</span>
+				                    </div>
+				                </div>
+				            </a><a href="javascript:;" class="list-item">
+				                <div class="list-img">
+				                    <img src="#">
+				                </div>
+				                <div class="list-mes v-flex-col">
+				                    <h4 class="list-title">为何「产品运营不分家」</h4>
+				                    <p class="v-flex-1 ft14">腾讯 P4 产品经理</p>
+				                    <div class="v-flex-between ft14">
+				                        <span>29109 人学过</span>
+				                        <span>免费</span>
+				                    </div>
+				                </div>
+				            </a>
+			        	</div>
+			        </div>
+			        <div class="right-side">
+			        	<div class="notice-box">
+			        		<div class="v-flex-start">
+			        			<h4>及时收到开课提醒？</h4>
+			        			<img class="notice-img" src="">
+			        		</div>
+			        	</div>
+			        </div>
+			    </div >
+		    </div>
+	    </transition>
+	    <transition name="fade">
+		    <div class="v-tab-pane" v-show="isTabsActive" v-bind:class="{ active: isTabsActive == '2' }">
+			    <div class="card-grid">
 		        	<div class="card-item">
 				        <div class="card-header">
 				            <img src="">
 				        </div>
 				        <div class="card-body">
-				        	<h3 class="title">产品经理·理论课</h3>
-				        	<span class="num">29109 人学过</span>
+				        	<h4>产品经理·理论课</h4>
+				        	<p class="v-flex-start">
+				        		<span class="small">29109 人学过</span>
+				        		<span class="bold">¥19.9</span>
+				        	</p>
 				        </div>
 				    </div>
-		        </i-col>
-		        <i-col span="8">
 		        	<div class="card-item">
 				        <div class="card-header">
 				            <img src="">
 				        </div>
 				        <div class="card-body">
-				        	<h3 class="title">产品经理·理论课</h3>
-				        	<span class="num">29109 人学过</span>
+				        	<h4>产品经理·理论课</h4>
+				        	<p class="v-flex-start">
+				        		<span class="small">29109 人学过</span>
+				        		<span class="bold">¥19.9</span>
+				        	</p>
 				        </div>
 				    </div>
-		        </i-col>
-		        <i-col span="8">
 		        	<div class="card-item">
 				        <div class="card-header">
 				            <img src="">
 				        </div>
 				        <div class="card-body">
-				        	<h3 class="title">产品经理·理论课</h3>
-				        	<span class="num">29109 人学过</span>
+				        	<h4>产品经理·理论课</h4>
+				        	<p class="v-flex-start">
+				        		<span class="small">29109 人学过</span>
+				        		<span class="bold">¥19.9</span>
+				        	</p>
 				        </div>
 				    </div>
-		        </i-col>
-		        <i-col span="8">
 		        	<div class="card-item">
 				        <div class="card-header">
 				            <img src="">
 				        </div>
 				        <div class="card-body">
-				        	<h3 class="title">产品经理·理论课</h3>
-				        	<span class="num">29109 人学过</span>
+				        	<h4>产品经理·理论课</h4>
+				        	<p class="v-flex-start">
+				        		<span class="small">29109 人学过</span>
+				        		<span class="bold">¥19.9</span>
+				        	</p>
 				        </div>
 				    </div>
-		        </i-col>
-		        <i-col span="8">
 		        	<div class="card-item">
 				        <div class="card-header">
 				            <img src="">
 				        </div>
 				        <div class="card-body">
-				        	<h3 class="title">产品经理·理论课</h3>
-				        	<span class="num">29109 人学过</span>
+				        	<h4>产品经理·理论课</h4>
+				        	<p class="v-flex-start">
+				        		<span class="small">29109 人学过</span>
+				        		<span class="bold">¥19.9</span>
+				        	</p>
 				        </div>
 				    </div>
-		        </i-col>
-		        <i-col span="8">
 		        	<div class="card-item">
 				        <div class="card-header">
 				            <img src="">
 				        </div>
 				        <div class="card-body">
-				        	<h3 class="title">产品经理·理论课</h3>
-				        	<span class="num">29109 人学过</span>
+				        	<h4>产品经理·理论课</h4>
+				        	<p class="v-flex-start">
+				        		<span class="small">29109 人学过</span>
+				        		<span class="bold">¥19.9</span>
+				        	</p>
 				        </div>
 				    </div>
-		        </i-col>
-		    </Row>
+			    </div>
+		    </div>
+		</transition>
+		<transition name="fade">
+    	<div class="v-tab-pane" v-show="isTabsActive" v-bind:class="{ active: isTabsActive  == '3'}">
+	    	<h3 class="page-title">互联网</h3>
+		    <div class="card-grid with-header">
+		        	<div class="card-item">
+				        <div class="card-header">
+				            <img src="">
+				        </div>
+				        <div class="card-body">
+				        	<h4>产品经理·理论课</h4>
+				        	<p class="v-flex-start">
+				        		<span class="small">29109 人学过</span>
+				        		<span class="bold">¥19.9</span>
+				        	</p>
+				        </div>
+				    </div>
+		        	<div class="card-item">
+				        <div class="card-header">
+				            <img src="">
+				        </div>
+				        <div class="card-body">
+				        	<h4>产品经理·理论课</h4>
+				        	<p class="v-flex-start">
+				        		<span class="small">29109 人学过</span>
+				        		<span class="bold">¥19.9</span>
+				        	</p>
+				        </div>
+				    </div>
+		        	<div class="card-item">
+				        <div class="card-header">
+				            <img src="">
+				        </div>
+				        <div class="card-body">
+				        	<h4>产品经理·理论课</h4>
+				        	<p class="v-flex-start">
+				        		<span class="small">29109 人学过</span>
+				        		<span class="bold">¥19.9</span>
+				        	</p>
+				        </div>
+				    </div>
+		        	<div class="card-item">
+				        <div class="card-header">
+				            <img src="">
+				        </div>
+				        <div class="card-body">
+				        	<h4>产品经理·理论课</h4>
+				        	<p class="v-flex-start">
+				        		<span class="small">29109 人学过</span>
+				        		<span class="bold">¥19.9</span>
+				        	</p>
+				        </div>
+				    </div>
+		        	<div class="card-item">
+				        <div class="card-header">
+				            <img src="">
+				        </div>
+				        <div class="card-body">
+				        	<h4>产品经理·理论课</h4>
+				        	<p class="v-flex-start">
+				        		<span class="small">29109 人学过</span>
+				        		<span class="bold">¥19.9</span>
+				        	</p>
+				        </div>
+				    </div>
+		        	<div class="card-item">
+				        <div class="card-header">
+				            <img src="">
+				        </div>
+				        <div class="card-body">
+				        	<h4>产品经理·理论课</h4>
+				        	<p class="v-flex-start">
+				        		<span class="small">29109 人学过</span>
+				        		<span class="bold">¥19.9</span>
+				        	</p>
+				        </div>
+				    </div>
+			</div>
+			<h3 class="page-title">商业银行</h3>
+		    <div class="card-grid with-header">
+	        	<div class="card-item">
+			        <div class="card-header">
+			            <img src="">
+			        </div>
+			        <div class="card-body">
+			        	<h4>产品经理·理论课</h4>
+			        	<p class="v-flex-start">
+			        		<span class="small">29109 人学过</span>
+			        		<span class="bold">¥19.9</span>
+			        	</p>
+			        </div>
+			    </div>
+	        	<div class="card-item">
+			        <div class="card-header">
+			            <img src="">
+			        </div>
+			        <div class="card-body">
+			        	<h4>产品经理·理论课</h4>
+			        	<p class="v-flex-start">
+			        		<span class="small">29109 人学过</span>
+			        		<span class="bold">¥19.9</span>
+			        	</p>
+			        </div>
+			    </div>
+			</div>
 	    </div>
-    	<div class="v-tab-pane" v-bind:class="{ active: isTabsActive  == '2'}">
-	    	<h3 class="page-title">互联网2</h3>
-		    <Row>
-		        <i-col span="8">
-		        	<div class="card-item">
-				        <div class="card-header">
-				            <img src="">
-				        </div>
-				        <div class="card-body">
-				        	<h3 class="title">产品经理·理论课</h3>
-				        	<span class="num">29109 人学过</span>
-				        </div>
-				    </div>
-		        </i-col>
-		        <i-col span="8">
-		        	<div class="card-item">
-				        <div class="card-header">
-				            <img src="">
-				        </div>
-				        <div class="card-body">
-				        	<h3 class="title">产品经理·理论课</h3>
-				        	<span class="num">29109 人学过</span>
-				        </div>
-				    </div>
-		        </i-col>
-		        <i-col span="8">
-		        	<div class="card-item">
-				        <div class="card-header">
-				            <img src="">
-				        </div>
-				        <div class="card-body">
-				        	<h3 class="title">产品经理·理论课</h3>
-				        	<span class="num">29109 人学过</span>
-				        </div>
-				    </div>
-		        </i-col>
-		        <i-col span="8">
-		        	<div class="card-item">
-				        <div class="card-header">
-				            <img src="">
-				        </div>
-				        <div class="card-body">
-				        	<h3 class="title">产品经理·理论课</h3>
-				        	<span class="num">29109 人学过</span>
-				        </div>
-				    </div>
-		        </i-col>
-		        <i-col span="8">
-		        	<div class="card-item">
-				        <div class="card-header">
-				            <img src="">
-				        </div>
-				        <div class="card-body">
-				        	<h3 class="title">产品经理·理论课</h3>
-				        	<span class="num">29109 人学过</span>
-				        </div>
-				    </div>
-		        </i-col>
-		        <i-col span="8">
-		        	<div class="card-item">
-				        <div class="card-header">
-				            <img src="">
-				        </div>
-				        <div class="card-body">
-				        	<h3 class="title">产品经理·理论课</h3>
-				        	<span class="num">29109 人学过</span>
-				        </div>
-				    </div>
-		        </i-col>
-		    </Row>
-	    </div>
-	    <div class="v-tab-pane" v-bind:class="{ active: isTabsActive  == '3'}">
-	    	<h3 class="page-title">互联网3</h3>
-	    	<nav class="nav-horizontal">
-	    		<ul>
-	    			<li><a>全部</a></li>
-	    			<li>大牛分享</li>
-	    			<li>行业入门</li>
-	    			<li>职场技能</li>
-	    			<li>兴趣爱好</li>
-	    			<li>高校合作课程</li>
-	    		</ul>
-	    	</nav>
-		    <Row>
-		        <i-col span="15">
-		        	<div class="list-theme">
-		        		<a href="javascript:;" class="list-item">
-			                <div class="list-img">
-			                    <img src="#">
-			                </div>
-			                <div class="list-mes v-flex-col">
-			                    <h3 class="list-title">为何「产品运营不分家」</h3>
-			                    <p class="v-flex-1">腾讯 P4 产品经理</p>
-			                    <div class="v-flex-between">
-			                        <div>
-			                            <span>29109 人学过</span>
-			                        </div>
-			                        <div>免费</div>
-			                    </div>
-			                </div>
-			            </a>
-			            <a href="javascript:;" class="list-item">
-			                <div class="list-img">
-			                    <img src="#">
-			                </div>
-			                <div class="list-mes v-flex-col">
-			                    <h3 class="list-title">为何「产品运营不分家」</h3>
-			                    <p class="v-flex-1">腾讯 P4 产品经理</p>
-			                    <div class="v-flex-between">
-			                        <div>
-			                            <span>29109 人学过</span>
-			                        </div>
-			                        <div>免费</div>
-			                    </div>
-			                </div>
-			            </a>
-			            <a href="javascript:;" class="list-item">
-			                <div class="list-img">
-			                    <img src="#">
-			                </div>
-			                <div class="list-mes v-flex-col">
-			                    <h3 class="list-title">为何「产品运营不分家」</h3>
-			                    <p class="v-flex-1">腾讯 P4 产品经理</p>
-			                    <div class="v-flex-between">
-			                        <div>
-			                            <span>29109 人学过</span>
-			                        </div>
-			                        <div>免费</div>
-			                    </div>
-			                </div>
-			            </a>
-		        	</div>
-		        </i-col>
-		        <i-col span="8" offset="1">
-		        	<Card style="width: 340px;height: 160px;border-radius: 12px;background-color: #d8d8d8;">
-		        		二维码
-		        	</Card>
-		        </i-col>
-		    </Row>
-	    </div>
+	   	</transition>
     </div>
 </div>
 <script>
     let vm  = new Vue({
         el: '#app',
         data: {
+        	show:false,
             visible: false,
-            isTabsActive:'3'
+            isTabsActive:'1',
+            messageBoxShow: false,
+          centerBoxShow: false
         },
+        created() {
+        this._messageBoxHide()
+      },
         methods: {
             changeTabs:function (e) {
             	this.isTabsActive = e.target.dataset.index;
-            }
+            },
+            _messageBoxShow(e) {
+	          this.messageBoxShow = !this.messageBoxShow
+	          this.centerBoxShow = false
+	        },
+	        _centerBoxShow() {
+	          this.centerBoxShow = !this.centerBoxShow
+	          this.messageBoxShow = false
+	        },
+	        _messageBoxHide() {
+	          let _this = this
+	          document.onclick = function (e) {
+	            document.querySelectorAll('.message-box')[0].style.display = 'none'
+	            _this.messageBoxShow = false
+	            document.querySelectorAll('.center-box')[0].style.display = 'none'
+	            _this.centerBoxShow = false
+	          };
+	        }
         }
     })
   </script>
-<!-- {/* 页面主体 */} -->
-
-
-
-<!-- <script src="__JQUERY__"></script> -->
-
-<script>
-// $(function(){
-	
-// })
-</script>
-
-
 </body>
 </html>

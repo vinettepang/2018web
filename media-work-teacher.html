@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="UTF-8">
+    <title>白熊求助助手</title>
+    <meta name="description" content="账号登录">
+  	<meta name="keyword" content="白熊求助助手，网申助手，应届生求职，应届生网申，求职攻略，网申简历">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport"  content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" >
+	<!-- <meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="format-detection" content="telephone=no">
+	<meta  name="format-detection"content="email=no">
+	<meta name="theme-color" content="#ffffff">
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+	<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+	<link rel="manifest" href="/manifest.json">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#482929"> -->
+	<!-- import Vue.js -->
+	<script src="http://vuejs.org/js/vue.min.js"></script>
+	<!-- import stylesheet -->
+	<link rel="stylesheet" href="http://unpkg.com/iview/dist/styles/iview.css">
+	<!-- import iView -->
+	<script src="http://unpkg.com/iview/dist/iview.min.js"></script>
+	<!-- <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>-->
+	<link rel="stylesheet" type="text/css" href="src/plugin/simditor/styles/simditor.css" />
+	<link rel="stylesheet" type="text/css" href="src/plugin/nc/style.css">
+	<link rel="stylesheet" href="src/css/app.css">
+	 <script src="src/plugin/tinymce/js/tinymce/tinymce.min.js"></script>
+	</head>
+<body>
+
+<!-- {/* 页面主体 */} -->
+<div id="app">
+	 <i-menu mode="horizontal" theme="dark" active-name="1">
+            <div class="layout-logo"></div>
+            <div class="layout-nav">
+                <menu-item name="1">
+                    <Icon type="ios-navigate"></Icon>
+                    Item 1
+                </menu-item>
+                <menu-item name="2">
+                    <Icon type="ios-keypad"></Icon>
+                    Item 2
+                </menu-item>
+                <menu-item name="3">
+                    <Icon type="ios-analytics"></Icon>
+                    Item 3
+                </menu-item>
+                <menu-item name="4">
+                    <Icon type="ios-paper"></Icon>
+                    Item 4
+                </menu-item>
+            </div>
+    </i-menu>
+   	<div class="site_container player_container">
+   		<div class="palyer_side">
+   			<div class="palyer_header">
+	   			新增练习题回答：4
+	   		</div>
+   			<div class="side_list noborder">
+	   			<ul class="check-list">
+	   				<li>
+	   					[新增2] Day 1 练习标题
+	   				</li>
+	   				<li>
+	   					[新增2] Day 1 练习标题
+	   				</li>
+	   				<li>
+	   					[新增2] Day 1 练习标题
+	   				</li>
+	   			</ul>
+	   		</div>
+   		</div>
+   		<div class="palyer_section">
+   			<div class="palyer_header clear"><!-- 练习题标题 -->
+	   			<span class="pull-left">[练习 3] 练习题标题</span>
+	   			<div class="btn-group pull-right"><a href="" class="btn-circle btn-primary">资料包</a><a href="" class="btn-circle btn-primary">我的作业</a></div>
+	   		</div>
+	   		<!-- 练习题 -->
+   			<div class="container640 task-container">
+   				<div class="card-box">
+   					<div class="border-box v-show-tab-box">
+   						<h4 class="title">练习题：</h4>
+	   					<p>有如下产品：QQ音乐、安全管家、应用宝，选择其中一项设计一个吴亦凡代言产品的营销方案。包括代言人与产品结合点，宣传口号，卖点及营销活动。(腾讯 2016)</p>
+	   					<div class="clear m-b-30">
+	   						<div class="btn-group pull-right v-show-tab-btn">
+	   							<a href="javascript:;" class="btn-circle btn-primary" data-text="解析">查看解析</a>
+	   						</div>
+	   					</div>
+	   					
+	   					<div class="v-show-tab-panel">
+		   					<!-- 回答思路 -->
+	   						<div class="analysis-box v-show-target">
+		   						<p>回答思路：</p>
+								<p>1.确定整个活动的目的</p>
+								<p>题目写的是一个营销方案。大家在答题的时候，首先最好说一下做这个活动的出发点。在活动运营的课程里面有说过，一般来说活动的目的是拉新、促活、品牌宣传。今天的笔试题都是腾讯比较大的产品，规模达到需要请代言人言人，因此基本就是以品牌宣传为主，提升产品在整个用户心中的形象。它比起到用户的拉新，以及提高整个app的下载量都来得更加重要。</p>
+								<p>2.确定活动与产品的结合点</p>
+								<p>要综合考虑明星的公众形象，正在做的事情来进行结合。比如说，最近明星参加了中国有嘻哈，在这里就可以做一些有嘻哈品牌的植入。但切记不要让活动脱离焦点，应该是让代言人与产品进行结合，而不是单方面变成了宣传明星的活动。</p>
+								<p>3.确定整个活动的宣传方式</p>
+								<p>题目中并没有明确规定活动预算范围。由于是规模较大的产品的营销方案，而且请明星一年的费用，本来就不少，大家可以去做一些花费很高的宣传活动，不要局限于线上的宣传。像投放框架广告、地铁广告这种大的平面广告，以及电视广告投放，都是可以考虑去做的。</p>
+								<p>问题点：<br/>
+								1.活动的方式要稍微展开来说<br/>
+								2.投放要标明到哪一类的公众号<br/>
+								3.关于app的活动，不要通过线上转发来进行抽奖。要在软件内进行。<br/>
+								4.宣传部分建议放在微博上进行，微博相比微信，是个更公开一点的平台。<br/>
+								5.结合品牌，QQ音乐是做正版、粉丝经济，不是去做社交<br/>
+								6.不要让活动脱离焦点，结合的是明星与音乐，最终活动变成宣传明星而不是APP。</p>
+		   					</div>
+	   					</div>
+   						<!-- 其他同学的作答 -->
+	   					<div class="other-answer">
+	   						<div class="v-flex-between">
+	   							<h4>其他同学的作答：</h4>
+	   							<div>
+	   								<Checkbox :checked.sync="checked" v-model="checked"  @on-change="change">
+								        <span v-if="checked">只看优秀</span>
+								        <span v-else>checked</span>
+								    </Checkbox>
+								    <Checkbox :checked.sync="checked" v-model="checked2"  @on-change="change">
+								        <span v-if="checked">只看本期</span>
+								        <span v-else>checked</span>
+								    </Checkbox>
+	   								<span>已有 12 个同学作答</span>
+	   							</div>
+	   						</div>
+	   						
+	   						<div class="card-box">
+	   							<div class="v-flex-between m-b-10">
+	   								<div>
+	   									<img src=""><span>user1</span>
+	   								</div>
+	   								
+	   								<!-- 老师操作 -->
+	   								<div class="">
+	   									<label class="label-solid label-taro">评优</label>
+	   									<label class="label-solid label-taro m-r-5">优秀作答</label><span>取消</span>
+	   								</div>
+	   							</div>
+	   							<p>2017-11-06</p>
+	   							<div class="analysis-box v-readmore-box">
+		   							<p>IDEA1</p>
+									<p>核心功能：中长期深度游
+									用户场景：主要面对有时间和有一定消费能力的人，现在每到节假日各大景点都爆满，全是看人，而真正了解一座城市是要去长期居住感受当地的文化，打卡式的旅游真的就只剩满足人的虚荣心了。当然这种形式要求内种有钱有闲的人，受众还是少。</p>
+									<p>IDEA2</p>
+									<p>核心功能：去很少有人去的地方旅游，不出名但是也很美。
+									用户场景：可以满足大部分人时间安排，不错时间错开地方，我们之前会选择很多挺好的地方但是还未被太多人知道，祖国这麽大好地方还是很多的，之前很多地方出名很多时候也是因为和一些事件联系到一起。而这种选择一方面可以收获很好的旅游体验，其次我们自己去发掘美景，去探索也会对热爱旅游的人有很大吸引力。</p>
+									IDEA3</p>
+									<p>核心功能：在自己和旅行社提出的限制条件下，携程给客户随机一些地方or路线。
+									用户场景：旅行本身就是对未知的一种探索，如果在自己可以接受的条件下，我们可以把这种未知性放到最大。</p>
+
+									<p>选择：我最开始选择的是第三种后来发现如果要做成好的产品的话难度太大，这个可以做成活动。现在选择的是第二个idea
+									idea：少有人走的路</p>
+									<p>用户体验公式=旅行体验和预期设想差距*旅游路线的数量*性价比</p>
+									<p>成本公式
+									<p>旅行体验和预期差距=当地的景色和预期匹配度*居住环境和饮食条件
+							          路线数量=对路线前期考察调研费用*路线和用户预期匹配度
+							          成本计算公式=运营成本*营销成本*开发成本*引导用户生产内容成本</p>
+									<p>收入计算公式=参与人数*付费率*客单价</p>
+									<p>分析：这里最重要的还是性价比和旅行体验，性价比的话前期肯定是很高的去的人少当地物价都是比较良心的，但是随着路线变火价格肯定会上升，在早期就应该进行一些准备，比如早早地和当地景点和旅店合作。如果客流量增加，是否会让净利润也增加的话，这个要看之后的数据了。
+									  最重要的还是用户体验，你要获得好的用户体验前期必然要投入很大成本。这里为了更好地用户体验应该做两点准备，第一：邀请一些专业的旅游人士吸取建议，然后携程员工做实地调研。第二：前期先放一些相对成熟一些的路线，在此期间积极和用户沟通反馈信息，快速迭代路线安排，之后再放出更多路线。
+									看了优秀作业之后的一些灵感：任何一个地方的意义除了美景之外还在于它的故事（培养种子用户），我们可以鼓励引导用户对去过的景点写攻略和评论，让用户来主动提供内容，写出你的故事，举办各种活动等等，对长期发展还是很有用的。</p>
+		   						</div>
+	   						</div>
+	   					</div>
+   					</div>
+   				</div>
+   			</div>
+   		</div>
+   	</div>
+</div>
+
+  <script>  
+ 	
+  tinymce.init({
+            selector: '.edit-container textarea',
+            // branding: false,
+            // elementpath: false,
+            height: 110,
+            language: 'zh_CN',
+            menubar:false,
+            //menubar: 'edit insert view format table tools',
+            theme: 'modern',
+            // plugins: [
+            //     'advlist autolink lists link image charmap print preview hr anchor pagebreak imagetools',
+            //     'searchreplace visualblocks visualchars code fullscreen fullpage',
+            //     'insertdatetime media nonbreaking save table contextmenu directionality',
+            //     'emoticons paste textcolor colorpicker textpattern imagetools codesample'
+            // ],
+            toolbar1:'formatselect | undo redo | bold italic strikethrough forecolor backcolor | link | alignleft aligncenter alignright alignjustify  | numlist bullist outdent indent  | removeformat',
+            //toolbar1: ' newnote print fullscreen preview | undo redo | insert | styleselect | forecolor backcolor bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image emoticons media codesample',
+            autosave_interval: '20s',
+            image_advtab: true,
+            table_default_styles: {
+                width: '100%',
+                borderCollapse: 'collapse'
+            },
+            editor_css:['src/css/app.css']
+        });
+
+  </script>
+<script type="text/javascript" src="src/plugin/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="src/js/ice_tools.js"></script>
+
+<script>
+
+//let v_tools = new Tools();
+_tools.readMore({'overHeight':'250'});
+    let vm  = new Vue({
+        el: '#app',
+        data: {
+        	checked: true,
+        	checked2: true,
+            disabled: false,
+            visible: false,
+            isTabsActive:'3',
+            myAnswer:null
+        },
+        methods: {
+        	goBuy(){
+        		console.log(_tools);
+        		_tools.popup({'imgSrc':'a','content':'微信扫码，使用白熊求职小程序查看'});
+        	},
+            changeTabs:function (e) {
+            	this.isTabsActive = e.target.dataset.index;
+            },
+            submitAnswer(e){
+            	let qid = e.target.dataset.qid;
+            	let a  =tinymce.get(qid).getContent();
+				console.log(a);console.log(qid);
+            	// Get the HTML contents of the currently active editor(得到当前处于活动状态的编辑器的html内容)
+				// console.debug(tinymce.activeEditor.getContent());
+
+				// // Get the raw contents of the currently active editor(得到当前处于活动状态的编辑器的原生内容)
+				// tinymce.activeEditor.getContent({format : 'raw'});
+
+				// // Get content of a specific editor:(得到指定的编辑器的内容)
+				// tinymce.get('content id').getContent()
+            },
+            change(e){
+            	console.log(e);
+            	//筛选
+            }
+        }
+    })
+  </script>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="http://unpkg.com/iview/dist/styles/iview.css">
+  <link rel="stylesheet" href="./src/static/css/reset.css">
+  <link rel="stylesheet" href="./src/static/css/center.css">
+  <script src="http://vuejs.org/js/vue.min.js"></script>
+  <script src="http://unpkg.com/iview/dist/iview.min.js"></script>
+  <title>icebear</title>
+</head>
+
+<body>
+  <div id="userCenetr">
+    <div class="section">
+      <div class="main">
+        <div class="container">
+          <img class="avater" src="https:////icebear-1-001.oss-cn-shenzhen.aliyuncs.com/uploads/head/2017-03-16/58c9f7db5462c.png"
+            alt="">
+          <div class="ice-message">
+            <span class="name">用户昵称</span>
+            <span class="vip">白熊 VIP</span>
+            <span class="number">白熊号 18588235006</span>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="content">
+        <Tabs value="myCourses" :animated="false">
+
+          <Tab-Pane name="myCourses" label="我的课程">
+            <ul class="myCourses">
+              <li class="myCouItem">
+                <span class="title">新媒体系列课</span>
+                <div class="btn-left">
+                  <i-button icon="ios-book-outline" shape="circle">资料包</i-button>
+                  <i-button icon="clipboard" shape="circle">课表</i-button>
+                </div>
+                <span class="type">自学班</span>
+                <div class="timeBar">
+                  <span class="line"></span>
+                  <ul class="timeWrapper">
+                    <li class="timeItem">
+                      <span class="outerRing"><span class="innerRing"></span></span>
+                      <p class="date">DAY1</p>
+                    </li>
+                    <li class="timeItem">
+                      <span class="outerRing"><span class="innerRing"></span></span>
+                      <p class="date">2</p>
+                    </li>
+                    <li class="timeItem">
+                      <span class="outerRing"><span class="innerRing"></span></span>
+                      <p class="date">3</p>
+                    </li>
+                    <li class="timeItem">
+                      <span class="outerRing"><span class="innerRing"></span></span>
+                      <p class="date">4</p>
+                    </li>
+                    <li class="timeItem">
+                      <span class="outerRing"><span class="innerRing"></span></span>
+                      <p class="date">5</p>
+                    </li>
+                    <li class="timeItem">
+                      <span class="outerRing"><span class="innerRing"></span></span>
+                      <p class="date">6</p>
+                    </li>
+                    <li class="timeItem">
+                      <span class="outerRing"><span class="innerRing"></span></span>
+                      <p class="date">7-8</p>
+                    </li>
+                    <li class="timeItem">
+                      <span class="outerRing"><span class="innerRing"></span></span>
+                      <p class="date">9</p>
+                    </li>
+
+                  </ul>
+                </div>
+                <span class="limiteTime">有效期至 2018.9.12</span>
+                <i-button class="btn-startStudy" shape="circle">开始学习 0/35</i-button>
+              </li>
+              <li class="myCouItem">
+                <span class="title">面试系列课</span>
+                <span class="limiteTime">有效期至 2018.02.21</span>
+                <i-button class="btn-startStudy" shape="circle">开始学习 0/35</i-button>
+              </li>
+            </ul>
+          </Tab-Pane>
+
+          <Tab-Pane name="myOrder" label="我的订单">
+            <ul class="myOrder">
+              <li class="myOrHeader">
+                <span class="title">课程名称</span>
+                <span class="price">价格</span>
+                <span class="state">课程状态</span>
+              </li>
+              <li class="myOrItem">
+                <div class="title">
+                  <p class="name">产品经理·理论课</p>
+                  <span class="type">训练营</span>
+                  <p class="number">订单号：24982371201</p>
+                </div>
+                <div class="price">
+                  <p class="currentPri">¥ 299.00</p>
+                  <p class="pastPri">¥ 399.00</p>
+                </div>
+                <div class="state">
+                  <p>等待拼团</p>
+                </div>
+              </li>
+              <li class="myOrItem">
+                <div class="title">
+                  <p class="name">面试系列课</p>
+                  <p class="number">订单号：24982371201</p>
+                </div>
+                <div class="price">
+                  <p class="currentPri">¥ 299.00</p>
+                </div>
+                <div class="state">
+                  <p>等待拼团</p>
+                </div>
+              </li>
+            </ul>
+          </Tab-Pane>
+
+          <Tab-Pane name="setting" label="通知设置" class="setting">
+            <ul class="teaSetting">
+              <li class="item">
+                <span class="option">新的学生提问</span>
+                <i-switch>
+                  <span slot="close">开</span>
+                  <span slot="open">关</span>
+                </i-switch>
+              </li>
+              <li class="item">
+                <span class="option">新的学生作业提交</span>
+                <i-switch>
+                  <span slot="close">开</span>
+                  <span slot="open">关</span>
+                </i-switch>
+              </li>
+              <li class="item">
+                <span class="option">新的学生练习题作答</span>
+                <i-switch>
+                  <span slot="close">开</span>
+                  <span slot="open">关</span>
+                </i-switch>
+              </li>
+            </ul>
+          </Tab-Pane>
+        </Tabs>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="./src/static/js/teacher_center.js"></script>
+</body>
+
+</html>

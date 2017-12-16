@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="UTF-8">
+    <title>白熊求助助手</title>
+    <meta name="description" content="账号登录">
+  	<meta name="keyword" content="白熊求助助手，网申助手，应届生求职，应届生网申，求职攻略，网申简历">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport"  content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" >
+	<!-- <meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="format-detection" content="telephone=no">
+	<meta  name="format-detection"content="email=no">
+	<meta name="theme-color" content="#ffffff">
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+	<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+	<link rel="manifest" href="/manifest.json">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#482929"> -->
+	<!-- import Vue.js -->
+	<script src="http://vuejs.org/js/vue.min.js"></script>
+	<!-- import stylesheet -->
+	<link rel="stylesheet" href="http://unpkg.com/iview/dist/styles/iview.css">
+	<!-- import iView -->
+	<script src="http://unpkg.com/iview/dist/iview.min.js"></script>
+	<!-- <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>-->
+	<link rel="stylesheet" type="text/css" href="src/plugin/simditor/styles/simditor.css" />
+	<link rel="stylesheet" type="text/css" href="src/plugin/nc/style.css">
+	<link rel="stylesheet" href="src/css/app.css">
+	 <script src="src/plugin/tinymce/js/tinymce/tinymce.min.js"></script>
+
+	</head>
+<body>
+
+<!-- {/* 页面主体 */} -->
+<div id="app">
+	 <i-menu mode="horizontal" theme="dark" active-name="1">
+            <div class="layout-logo"></div>
+            <div class="layout-nav">
+                <menu-item name="1">
+                    <Icon type="ios-navigate"></Icon>
+                    Item 1
+                </menu-item>
+                <menu-item name="2">
+                    <Icon type="ios-keypad"></Icon>
+                    Item 2
+                </menu-item>
+                <menu-item name="3">
+                    <Icon type="ios-analytics"></Icon>
+                    Item 3
+                </menu-item>
+                <menu-item name="4">
+                    <Icon type="ios-paper"></Icon>
+                    Item 4
+                </menu-item>
+            </div>
+    </i-menu>
+   	<div class="site_container player_container">
+   		<div class="palyer_side">
+   			<div class="palyer_header">
+	   			大作业待改：4
+	   		</div>
+	   		<div class="side_list noborder">
+	   			<ul class="check-list">
+	   				<li>
+	   					<Checkbox class="circle" :checked.sync="checked" v-model="checked"  @on-change="change">
+						    <span class="p-l-10">user 1</span>
+						    <span class="pull-right">11月13号</span>
+					    </Checkbox>
+	   				</li>
+	   				<li>
+	   					<Checkbox class="circle" :checked.sync="checked" v-model="checked"  @on-change="change">
+						    <span class="p-l-10">user 1</span>
+						    <span class="pull-right">11月13号</span>
+					    </Checkbox>
+	   				</li>
+	   				<li>
+	   					<Checkbox class="circle" :checked.sync="checked" v-model="checked"  @on-change="change">
+						    <span class="p-l-10">user 1</span>
+						    <span class="pull-right">11月13号</span>
+					    </Checkbox>
+	   				</li>
+	   			</ul>
+	   		</div>
+   		</div>
+   		<div class="palyer_section">
+   			<div class="palyer_header clear"><!-- 大作业 -->
+	   			<span class="pull-left">大作业</span>
+	   		</div>
+   			<div class="container640 task-container">
+   				<div class="card-box">
+   					<!-- 练习题 -->
+   					<div class="border-box">
+   						<div class="clear m-b-10">
+   							<h3 class="pull-left"><img src="" class="head" />user 1</h3>
+   							<span class="pull-right">2017-11-06</span>
+   						</div>
+   						<div class="m-b-20 clear">
+   							<span>一份作业.pdf</span>
+   							<div class="btn-group pull-right"><a href="" class="btn-circle btn-primary">预览作业</a><a href="" class="btn-circle btn-primary">下载作业</a></div>
+   						</div>
+   					</div>
+   					<div><!-- 我的批改 -->
+   						<h4 class="title">我的批改：</h4>
+   						<div class="edit-container"><textarea id="correct1" name="correct1"></textarea></div><!-- 编辑模式 -->
+   						<a @click="submitAnswer" data-qid="correct1" class="btn-circle btn-primary">完成批改</a>
+   					</div>
+   				</div>
+   			</div>
+   		</div>
+   	</div>
+</div>
+
+  <script>  
+ 	
+  tinymce.init({
+            selector: '.edit-container textarea',
+            // branding: false,
+            // elementpath: false,
+            height: 110,
+            language: 'zh_CN',
+            menubar:false,
+            //menubar: 'edit insert view format table tools',
+            theme: 'modern',
+            // plugins: [
+            //     'advlist autolink lists link image charmap print preview hr anchor pagebreak imagetools',
+            //     'searchreplace visualblocks visualchars code fullscreen fullpage',
+            //     'insertdatetime media nonbreaking save table contextmenu directionality',
+            //     'emoticons paste textcolor colorpicker textpattern imagetools codesample'
+            // ],
+            toolbar1:'formatselect | undo redo | bold italic strikethrough forecolor backcolor | link | alignleft aligncenter alignright alignjustify  | numlist bullist outdent indent  | removeformat',
+            //toolbar1: ' newnote print fullscreen preview | undo redo | insert | styleselect | forecolor backcolor bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image emoticons media codesample',
+            autosave_interval: '20s',
+            image_advtab: true,
+            table_default_styles: {
+                width: '100%',
+                borderCollapse: 'collapse'
+            },
+            editor_css:['src/css/app.css']
+        });
+
+  </script>
+<script type="text/javascript" src="src/plugin/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="src/js/ice_tools.js"></script>
+
+<script>
+
+//let v_tools = new Tools();
+_tools.readMore({'overHeight':'250'});
+    let vm  = new Vue({
+        el: '#app',
+        data: {
+        	checked: true,
+            disabled: false,
+            visible: false,
+            isTabsActive:'3',
+            myAnswer:null
+        },
+        methods: {
+        	goBuy(){
+        		console.log(_tools);
+        		_tools.popup({'imgSrc':'a','content':'微信扫码，使用白熊求职小程序查看'});
+        	},
+            changeTabs:function (e) {
+            	this.isTabsActive = e.target.dataset.index;
+            },
+            submitAnswer(e){
+            	let qid = e.target.dataset.qid;
+            	let a  =tinymce.get(qid).getContent();
+				console.log(a);console.log(qid);
+            	// Get the HTML contents of the currently active editor(得到当前处于活动状态的编辑器的html内容)
+				// console.debug(tinymce.activeEditor.getContent());
+
+				// // Get the raw contents of the currently active editor(得到当前处于活动状态的编辑器的原生内容)
+				// tinymce.activeEditor.getContent({format : 'raw'});
+
+				// // Get content of a specific editor:(得到指定的编辑器的内容)
+				// tinymce.get('content id').getContent()
+            },
+            change(e){
+            	console.log(e);
+            	//筛选
+            }
+        }
+    })
+  </script>
+</body>
+</html>

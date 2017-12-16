@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- import stylesheet -->
+  <link rel="stylesheet" href="//unpkg.com/iview/dist/styles/iview.css">
+  <link rel="stylesheet" href="./css/index.css">
+  <link rel="stylesheet" href="./player/player.css">
+  <!-- import vue -->
+  <script src="http://vuejs.org/js/vue.min.js"></script>
+  <!-- import iView -->
+  <script src="//unpkg.com/iview/dist/iview.min.js"></script>
+  <title>progress-bar</title>
+</head>
+
+<body>
+  <div id="player">
+    <!-- time:音频的总时长 url:音频地址 count:当前处于播放状态的播放器数量 -->
+    <player :time="time" :url="url" :count="count" @countChange="_countChange"></player>
+    <player :time="time" :url="url" :count="count" @countChange="_countChange"></player>
+    <player :time="time" :url="url" :count="count" @countChange="_countChange"></player>
+  </div>
+
+  <script src="./player/player.js"></script>
+  <script>
+    new Vue({
+      el: '#player',
+      data() {
+        return {
+          time: 289,                                    //音频的总时长
+          url: './music/1.mp3',                         //音频地址
+          count: 0                                      //当前处于播放状态的播放器数量
+        }
+      },
+      components: {
+        player: player
+      },
+      methods: {
+        //从子组件监听count的变化
+        _countChange(newCount) {
+          this.count = newCount
+          console.log('当前播放的数量：' + this.count)
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>

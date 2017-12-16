@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="http://unpkg.com/iview/dist/styles/iview.css">
+  <link rel="stylesheet" href="./src/static/css/reset.css">
+  <link rel="stylesheet" href="./src/static/css/app.css">
+  <link rel="stylesheet" href="./src/static/css/message.css">
+  <script src="http://vuejs.org/js/vue.min.js"></script>
+  <script src="http://unpkg.com/iview/dist/iview.min.js"></script>
+  <script src="http://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+  <title>icebear</title>
+</head>
+
+<body>
+  <div id="message">
+    <header>
+      <div class="navbar">
+        <div style="display: none" id="logined" style="display: none">
+          <a href="javascript:void(0)" id="messageBoxShow">
+            <Icon class="chatBox" type="chatbox"></Icon>
+          </a>
+          <img id="centerBoxShow" class="mianAvater" src="https:////icebear-1-001.oss-cn-shenzhen.aliyuncs.com/uploads/head/2017-03-16/58c9f7db5462c.png"
+            alt="">
+        </div>
+
+        <div class="loginOrRegister" id="notLogin" style="display: none">
+          <a href="javascript:void(0)" class="login">登录</a>
+          <a href="javascript:void(0)" class="register">注册</a>
+        </div>
+
+
+        <!-- 消息通知弹出框 -->
+        <!-- <transition name="messageBox"> -->
+        <div class="message-box" style="display: none">
+          <div class="triangle"></div>
+          <div class="main">
+            <span class="title">通知</span>
+          </div>
+          <ul class="content">
+            <li class="item">
+              <img class="avater" src="https:////icebear-1-001.oss-cn-shenzhen.aliyuncs.com/uploads/head/2017-03-16/58c9f7db5462c.png"
+                alt="">
+              <span class="name">Lee<span class="teaLevel">白熊讲师</span></span>
+              <span class="detail">今日学习任务：<span class="strong">产品经理·理论课</span></span>
+            </li>
+            <li class="item">
+              <img class="avater" src="https:////icebear-1-001.oss-cn-shenzhen.aliyuncs.com/uploads/head/2017-03-16/58c9f7db5462c.png"
+                alt="">
+              <span class="name">Lee<span class="teaLevel">白熊讲师</span></span>
+              <span class="detail">今日学习任务：<span class="strong">产品经理·理论课</span></span>
+            </li>
+            <li class="item">
+              <img class="avater" src="https:////icebear-1-001.oss-cn-shenzhen.aliyuncs.com/uploads/head/2017-03-16/58c9f7db5462c.png"
+                alt="">
+              <span class="name">Lee<span class="teaLevel">白熊讲师</span></span>
+              <span class="detail">今日学习任务：<span class="strong">产品经理·理论课</span></span>
+            </li>
+          </ul>
+          <div class="footer">
+            <span class="set">设置</span>
+            <span class="seeAll">查看全部通知</span>
+          </div>
+        </div>
+        <!-- </transition> -->
+
+        <!-- 个人中心弹窗 -->
+        <!-- <transition name="centerBox"> -->
+        <div class="center-box" style="display: none">
+          <div class="triangle"></div>
+          <a href="./user_center.html" class="btn-center">个人中心</a>
+          <a class="btn-loginout">登出</a>
+        </div>
+        <!-- </transition> -->
+      </div>
+    </header>
+
+    <!-- 登录弹出框 -->
+    <div class="modal" id="loginAlert" style="display:none">
+      <div class="loginAlert">
+        <a id="loginAlertHide" href="javascript:void(0)">
+          <Icon type="close-round" class="btn-close"></Icon>
+        </a>
+        <img class="weixinImg" src="" alt="">
+        <p class="about">请使用微信扫码，登录「白熊求职」</p>
+      </div>
+    </div>
+
+    <!-- 注册弹出框 -->
+    <div class="modal" id="registerAlert" style="display:none">
+      <div class="registerAlert">
+        <a id="registerAlertHide" href="javascript:void(0)">
+          <Icon type="close-round" class="btn-close"></Icon>
+        </a>
+        <p class="title">绑定/创建白熊账号</p>
+        <i-input class="number"></i-input>
+        <div class="group">
+          <i-input class="verifyCode"></i-input>
+          <i-button class="btn-getCode">获取验证码</i-button>
+        </div>
+
+        <i-button class="btn-okOrCreate" shape="circle">确认绑定/创建</i-button>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="main">
+        <span class="title">全部消息</span>
+        <span class="set">设置</span>
+      </div>
+      <div class="content">
+        <ul class="content-wrapper">
+          <li class="item">
+            <span class="time">2017.8.5</span>
+            <img class="avater" src="https://icebear-1-001.oss-cn-shenzhen.aliyuncs.com/uploads/head/2017-03-16/58c9f7db5462c.png" alt="">
+            <span class="name">Lee<span class="teaLevel">白熊讲师</span></span>
+            <span class="detail">今日学习任务：<span class="strong">产品经理·理论课 Day 2</span></span>
+          </li>
+          <li class="item">
+            <span class="time">2017.8.5</span>
+            <img class="avater" src="https://icebear-1-001.oss-cn-shenzhen.aliyuncs.com/uploads/head/2017-03-16/58c9f7db5462c.png" alt="">
+            <span class="name">Lee<span class="teaLevel">白熊讲师</span></span>
+            <span class="detail">今日学习任务：<span class="strong">产品经理·理论课 Day 2</span></span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+
+  </div>
+  <script src="./src/static/js/app.js"></script>
+  <script src="./src/static/js/message.js"></script>
+</body>
+
+</html>

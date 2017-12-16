@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="UTF-8">
+    <title>白熊求助助手</title>
+    <meta name="description" content="账号登录">
+  	<meta name="keyword" content="白熊求助助手，网申助手，应届生求职，应届生网申，求职攻略，网申简历">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport"  content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" >
+	<!-- <meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="format-detection" content="telephone=no">
+	<meta  name="format-detection"content="email=no">
+	<meta name="theme-color" content="#ffffff">
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+	<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+	<link rel="manifest" href="/manifest.json">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#482929"> -->
+	<!-- import Vue.js -->
+	<script src="http://vuejs.org/js/vue.min.js"></script>
+	<!-- import stylesheet -->
+	<link rel="stylesheet" href="http://unpkg.com/iview/dist/styles/iview.css">
+	<!-- import iView -->
+	<script src="http://unpkg.com/iview/dist/iview.min.js"></script>
+	<!-- <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>-->
+
+	<link rel="stylesheet" href="src/css/app.css">
+	<link rel="stylesheet" href="src/css/nucleo-outline.css">
+	</head>
+<body>
+
+<!-- {/* 页面主体 */} -->
+<div id="app">
+	
+	 <i-menu mode="horizontal" theme="dark" active-name="1">
+            <div class="layout-logo"></div>
+            <div class="layout-nav">
+                <menu-item name="1">
+                    <Icon type="ios-navigate"></Icon>
+                    Item 1
+                </menu-item>
+                <menu-item name="2">
+                    <Icon type="ios-keypad"></Icon>
+                    Item 2
+                </menu-item>
+                <menu-item name="3">
+                    <Icon type="ios-analytics"></Icon>
+                    Item 3
+                </menu-item>
+                <menu-item name="4">
+                    <Icon type="ios-paper"></Icon>
+                    Item 4
+                </menu-item>
+            </div>
+    </i-menu>
+    <div class="container1000">
+    	<Row>
+	        <i-col span="16">
+	        	<div class="card-box narrow">
+	        		<div class="v-flex-between card-head">
+	        			<h3 class="pri-title">产品经理·理论课</h3>
+	        			<span>5 天后结课</span>
+	        		</div>
+        		
+					<div class="v-flex-between">
+	        			<div class="btn-group">
+	        				<a class="btn-circle-lg btn-secondary">提问待答：3</a><a class="btn-circle-lg btn-secondary">作业待改：4</a><a class="btn-circle-lg btn-secondary">评优秀：4</a>
+	        			</div>
+	        		</div>
+				</div>
+				<div class="card-box narrow">
+	        		<div class="v-flex-between card-head">
+	        			<h3 class="pri-title">产品经理·理论课</h3>
+	        			<span>5 天后结课</span>
+	        		</div>
+        		
+					<div class="v-flex-between">
+	        			<div class="btn-group">
+	        				<a class="btn-circle-lg btn-secondary">提问待答：3</a><a class="btn-circle-lg btn-secondary">作业待改：4</a><a class="btn-circle-lg btn-secondary">评优秀：4</a>
+	        			</div>
+	        		</div>
+				</div>
+	        </i-col>
+	        <i-col span="7" offset="1"> 
+	        	<aside class="aside-card">
+	        		<div class="aside-head">
+	        			<img src="" style="width:80px;height:80px;border-raduis:50%; background-color: #e5e5e5;">
+	        			<p>Supermoon</p>
+	        			<p>白熊 VIP</p>
+	        		</div>
+	        		<div class="aside-body">
+	        			<ul>
+	        				<li><p>1 门</p><p>学习课程</p></li>
+	        				<li><p>1 门</p><p>学习课程</p></li>
+	        			</ul>
+	        		</div>
+	        	</aside>
+	        	<aside class="aside-card calendar-card">
+        			<h3 class="title">直播日历</h3>
+        			<p><span class="label-mini">已结束</span>9月1日 20:00 (周四)</p>
+        			<p><span class="label-mini">待开始</span>9月1日 20:00 (周四)</p>
+        			<p><span class="label-mini">待开始</span>9月10日 20:00 (周六)</p>
+	        	</aside>
+	        </i-col>
+	    </Row>
+      	
+    </div>
+</div>
+<script>
+    let vm  = new Vue({
+        el: '#app',
+        data: {
+            visible: false,
+            isTabsActive:'3'
+        },
+        methods: {
+            changeTabs:function (e) {
+            	this.isTabsActive = e.target.dataset.index;
+            }
+        }
+    })
+  </script>
+<!-- {/* 页面主体 */} -->
+
+
+
+<!-- <script src="__JQUERY__"></script> -->
+
+<script>
+// $(function(){
+	
+// })
+</script>
+
+
+</body>
+</html>

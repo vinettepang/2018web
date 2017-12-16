@@ -17,103 +17,136 @@
 	<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
 	<link rel="manifest" href="/manifest.json">
 	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#482929"> -->
-	<!-- import Vue.js -->
-	<script src="http://vuejs.org/js/vue.min.js"></script>
 	<!-- import stylesheet -->
 	<link rel="stylesheet" href="http://unpkg.com/iview/dist/styles/iview.css">
-	<!-- import iView -->
-	<script src="http://unpkg.com/iview/dist/iview.min.js"></script>
+	<link rel="stylesheet" href="src/css/iconstyle.css">
 	<!-- <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>-->
-
 	<link rel="stylesheet" href="src/css/app.css">
-	<link rel="stylesheet" href="src/css/nucleo-outline.css">
+	<script src="http://vuejs.org/js/vue.min.js"></script>
+	<script src="http://unpkg.com/iview/dist/iview.min.js"></script>
 	</head>
 <body>
 
 <!-- {/* 页面主体 */} -->
 <div id="app">
 	
-	 <i-menu mode="horizontal" theme="dark" active-name="1">
-            <div class="layout-logo"></div>
-            <div class="layout-nav">
-                <menu-item name="1">
-                    <Icon type="ios-navigate"></Icon>
-                    Item 1
-                </menu-item>
-                <menu-item name="2">
-                    <Icon type="ios-keypad"></Icon>
-                    Item 2
-                </menu-item>
-                <menu-item name="3">
-                    <Icon type="ios-analytics"></Icon>
-                    Item 3
-                </menu-item>
-                <menu-item name="4">
-                    <Icon type="ios-paper"></Icon>
-                    Item 4
-                </menu-item>
+	<header>
+        <i-menu mode="horizontal" theme="dark" active-name="1">
+	        <div class="container">
+                <div class="layout-logo"><img src="https://icebear.me/Public/Home/images/logo-b.png" style=" width: 134px; height: 35.8px;"></div>
+                <div class="layout-nav">
+                    <menu-item name="1">
+                        <a>学院</a>
+                    </menu-item>
+                    <menu-item name="2">
+                        <a>求职</a>
+                    </menu-item>
+                </div>
+                <div class="layout-right pull-right">
+                 <a href="" class="btn btn-md btn-secondary">我的课程</a>
+                  <Icon type="chatbox"></Icon>
+
+                  <Dropdown>
+                  <img src="https://icebear-1-001.oss-cn-shenzhen.aliyuncs.com/uploads/head/2017-03-16/58c9f7db5462c.png" class="user-head">
+                  <dropdown-menu slot="list">
+                      <dropdown-item>个人中心</dropdown-item>
+                      <dropdown-item>登出</dropdown-item>
+                  </dropdown-menu>
+	              </Dropdown>
+	            </div>
             </div>
-    </i-menu>
-    <div class="container1000">
-    	<Row>
-	        <i-col span="15">
-	        	<div class="card-box narrow">
-	        		<div class="list-item noborder">
-	        			<div class="list-mes">
-	        				<h3 class="pri-title">产品经理·理论课</h3>
-	        			</div>
-	        			<div class="btn-group">
-	        				<a class="btn-circle btn-primary" href="">返回课程</a>
+        </i-menu>
+    </header>
+    <div class="container">
+		<div class="main-content v-time-wrap">
+				<div class="card-box narrow">
+					<div class="v-flex-start">
+	        			<h3 class="pri-title">产品经理·理论课</h3>
+	        			<a class="btn-circle btn-primary" href="">返回课程</a>
+	        		</div>
+	        	</div>
+	        	<!-- 资料包页面内容块 start -->
+				<div class="card-box narrow">
+	        		<h3 class="">课件 PPT</h3>
+	        		<p>一句话简介一句话简介一句话简介一句话简介一句话简介。</p>
+					<div class="clear">
+	        			<div class="btn-group pull-right">
+	        				<span class="tips m-r-15">提取码：dass</span>
+	        				<a class="btn-circle btn-secondary ft14">复制提取码</a>
+	        				<a class="btn-circle btn-secondary ft14">点击下载</a>
 	        			</div>
 	        		</div>
 				</div>
 				<div class="card-box narrow">
+	        		<h3 class="">课件 PPT</h3>
+	        		<p>一句话简介一句话简介一句话简介一句话简介一句话简介。</p>
+					<div class="clear">
+	        			<div class="btn-group pull-right">
+	        				<span class="tips m-r-15">*课程结束之后才可进行评价，评价后即可下载优秀作业</span>
+	        				<a class="btn-circle btn-secondary ft14">点击下载</a>
+	        			</div>
+	        		</div>
+				</div>
+				<!-- 资料包页面内容块  end -->
+				<div class="card-box narrow">
 					<h3 class="page-title">Day 1: 开营直播</h3>
 	        		<ul class="stutas-list">
-	        			<li>课程 未学习</li>
-	        			<li>练习 未完成</li>
+	        			<li>课程 <span class="text">未学习</span></li>
+	        			<li>练习 <span class="text">未完成</span></li>
 	        		</ul>
 				</div>
 				<div class="card-box narrow">
 					<h3 class="page-title">Day 2: 从零开始，初步认识产品经理</h3>
 	        		<timeline pending>
-				        <timeline-item>发布1.0版本</timeline-item>
+				        <timeline-item><Icon type="record" slot="dot"></Icon>发布1.0版本</timeline-item>
 				        <timeline-item>发布2.0版本</timeline-item>
 				        <timeline-item>发布3.0版本</timeline-item>
 				        <timeline-item>发布1.0版本</timeline-item>
 				        <timeline-item>发布2.0版本</timeline-item>
 				        <timeline-item>发布3.0版本</timeline-item>
-				        <timeline-item><a href="#">查看更多</a></timeline-item>
+				        <!-- <timeline-item><a href="#">查看更多</a></timeline-item> -->
 				    </timeline>
-        			<ul class="time-horizontal">
-        				<li class="timeline-item"><i class="nc-icon-outline ui-1_check-circle-08"></i><span>Day 1</span></li>
-        				<li class="timeline-item"><i class="nc-icon-outline ui-1_check-circle-08"></i><span>Day 2</span></li>
-        				<li class="timeline-item"><i class="nc-icon-outline ui-1_check-circle-08"></i><span>Day 3</span></li>
-        			</ul>
         			<ul class="stutas-list">
-	        			<li>课程 未学习</li>
-	        			<li>练习 未完成</li>
+	        			<li>课程 <span class="text">未学习</span></li>
+	        			<li>练习 <span class="text">未完成</span></li>
 	        		</ul>
 				</div>
-	        </i-col>
-	        <i-col span="8" offset="1"> 
-	        	<aside class="aside-card">
-	        		<div class="aside-head">
-	        			<img src="" style="width:80px;height:80px;border-raduis:50%; background-color: #e5e5e5;">
-	        			<p>Supermoon</p>
-	        			<p>白熊 VIP</p>
+				<div class="card-box narrow">
+					<h3 class="page-title">Day 3: 从零开始，初步认识产品经理</h3>
+	        		<timeline pending>
+				        <timeline-item><Icon type="record" slot="dot"></Icon>发布1.0版本</timeline-item>
+				        <timeline-item>发布2.0版本</timeline-item>
+				        <timeline-item>发布3.0版本</timeline-item>
+				        <timeline-item>发布1.0版本</timeline-item>
+				        <timeline-item>发布2.0版本</timeline-item>
+				        <timeline-item>发布3.0版本</timeline-item>
+				        <!-- <timeline-item><a href="#">查看更多</a></timeline-item> -->
+				    </timeline>
+        			<ul class="stutas-list">
+	        			<li>课程 <span class="text">未学习</span></li>
+	        			<li>练习 <span class="text">未完成</span></li>
+	        		</ul>
+				</div>
+	        </div>
+        	<div class="right-side">
+	        	<aside class="aside-card" style="height: auto">
+	        		<div class="aside-border-head">
+	        			<p>直播日历</p>
+	        			<p><span class="label"></span>9月1日 20:00 (周四)</p>
+	        			<p><span class="label"></span>9月1日 20:00 (周四)</p>
+	        			<p><span class="label"></span>9月1日 20:00 (周四)</p>
 	        		</div>
-	        		<div class="aside-body">
-	        			<ul>
-	        				<li><p>1 门</p><p>学习课程</p></li>
-	        				<li><p>1 门</p><p>学习课程</p></li>
-	        			</ul>
+	        		<div class="aside-border-body">
+	        			<p class="bold title">大作业截止时间</p>
+	        			<p>9月1日</p>
+	        			<a class="btn-circle btn-lg btn-secondary">提交作业</a>
 	        		</div>
 	        	</aside>
-	        	
-	        </i-col>
-	    </Row>
-      	
+	        	<aside class="aside-box">
+	        		课程配套资料包下载
+	        	</aside>
+	        </div>
+	    </div>
     </div>
 </div>
 <script>

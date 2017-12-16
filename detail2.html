@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="UTF-8">
+    <title>白熊求助助手</title>
+    <meta name="description" content="账号登录">
+  	<meta name="keyword" content="白熊求助助手，网申助手，应届生求职，应届生网申，求职攻略，网申简历">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport"  content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" >
+	<!-- <meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="format-detection" content="telephone=no">
+	<meta  name="format-detection"content="email=no">
+	<meta name="theme-color" content="#ffffff">
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+	<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+	<link rel="manifest" href="/manifest.json">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#482929"> -->
+	<!-- import Vue.js -->
+	<script src="http://vuejs.org/js/vue.min.js"></script>
+	<!-- import stylesheet -->
+	<link rel="stylesheet" href="http://unpkg.com/iview/dist/styles/iview.css">
+	<!-- <link rel="stylesheet" type="text/css" href="src/plugin/Swiper-3.4.2/dist/css/swiper.min.css"> -->
+	<!-- import iView -->
+	<script src="http://unpkg.com/iview/dist/iview.min.js"></script>
+	<!-- <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>-->
+
+	<link rel="stylesheet" href="src/css/app.css">
+	</head>
+<body>
+
+<!-- {/* 页面主体 */} -->
+<div id="app">
+	
+	 <i-menu mode="horizontal" theme="dark" active-name="1">
+            <div class="layout-logo"></div>
+            <div class="layout-nav">
+                <menu-item name="1">
+                    <Icon type="ios-navigate"></Icon>
+                    Item 1
+                </menu-item>
+                <menu-item name="2">
+                    <Icon type="ios-keypad"></Icon>
+                    Item 2
+                </menu-item>
+                <menu-item name="3">
+                    <Icon type="ios-analytics"></Icon>
+                    Item 3
+                </menu-item>
+                <menu-item name="4">
+                    <Icon type="ios-paper"></Icon>
+                    Item 4
+                </menu-item>
+            </div>
+    </i-menu>
+    <div class="top-wrapper">
+		<div class="container v-flex-col">
+			<h1>为何产品运营不分家</h1>
+			<h3 class="v-flex-1">时间 2017.08.12  20:00 (周二)</h3>
+			<div class="v-flex-between">
+			<span>29109 人学过</span>
+			<div class="btn-group">
+				<a class="btn-circle-md btn-primary" href="">两人拼团 ¥299</a><a class="btn-circle-md btn-primary" href="">单独购买 ¥399</a><a class="btn-circle-md btn-secondary">免费试看</a>
+			</div>
+			</div>
+		</div>
+	</div>
+	<div class="container860">
+		<Affix :offset-top="20">
+			<ul id="nav-scoll" class="nav-affix v-flex-row v-grow-1">
+				<li data-ref="#course">课程介绍</li>
+				<li data-ref="#teacher">讲师介绍</li>
+				<li data-ref="#member">学员评价</li>
+				<li data-ref="#work">往期学员作品</li>
+			</ul>
+	    </Affix>
+	</div>
+	<div class="container860" >
+		<div class="card-box">
+		<div id="course" class="section-item">
+			<h3 class="dot-line-title">课程介绍</h3>
+			<p>这里需要简短诱人的课程介绍，这里需要简短诱人的课程介绍，这里需要简短诱人的课程介绍，这里需要简短诱人的课程介绍。</p>
+			<table class="table-bordered">
+				<thead><tr><th colspan="3">课程大纲</th></tr></thead>
+				<tbody>
+					<tr>
+						<td width="100">Day 1</td>
+						<td  width="140" class="italic-label"><span class="label-sm">训练营</span>开营直播</td>
+						<td>训练营学习流程介绍、老师在线互动答疑。</td>
+					</tr>
+					<tr>
+						<td>Day 2</td>
+						<td>开营直播</td>
+						<td>互联网行业及产品岗位介绍、产品能力图谱解析，如何提高自己的产品能力。</td>
+					</tr>
+					<tr>
+						<td rowspan="2">Day 3</td>
+						<td class="border-top">数据思维</td>
+						<td class="border-top">老师在线互动答疑。</td>
+					</tr>
+					<tr>
+						<td class="border-dashed">直播答疑</td>
+						<td class="border-dashed">数据思维的理论方法、记录和分析数据的实用工具推荐及实操演示。</td>
+					</tr>
+				</tbody>
+			</table>
+			<table class="table-bordered col2 center">
+				<thead><tr><th colspan="3">课程大纲</th></tr></thead>
+				<tbody>
+					<tr>
+						<td width="50%">Day 1</td>
+						<td  width="50%" class="italic-label">开营直播</td>
+					</tr>
+					<tr>
+						<td>
+							<div class="box"><ul>
+								<li>系统课程</li>
+								<li>配套资料</li>
+								<li>免费内推</li>
+								<li>监督打卡</li>
+								<li>Case 讨论</li> 
+							</ul>
+							<a href="" class="btn-circle-md full-wd btn-primary">¥199 立即报名</a></div>
+						</td>
+						<td><div class="box"><ul>
+								<li>系统课程</li>
+								<li>配套资料</li>
+								<li>免费内推</li>
+								<li>监督打卡</li>
+								<li>Case 讨论</li> 
+							</ul>
+							<a href="" class="btn-circle-md full-wd btn-primary">¥399</a>
+						<a href="" class="btn-circle-md full-wd btn-primary">¥299 拼团买</a></div></td>
+						
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div id="teacher" class="section-item">
+			<h3 class="dot-line-title">讲师介绍</h3>
+			<div class="block-list">
+				<p class="center"><img src=""></p>
+				<p class="bold center">Yugi WANG</p>
+				<p>腾讯 P3.2 高级产品经理，中山大学旅游学院管理学学士。</p>
+				<p>2010 年加入腾讯，现任 SNG 即通应用部平台运营组组长，认证面试官。群垂直场景产品负责人，曾先后负责 WebQQ、Q+、QQ 互联、兴趣部落等产品的策划与运营。</p>
+				<p>拥有超过 6 年的互联网产品经验，在产品策划、产品运营、数据分析、交互设计、项目管理等方面有较深的研究。</p>
+			</div>
+			<div class="block-list">
+				<p class="center"><img src=""></p>
+				<p class="bold center">Yugi WANG</p>
+				<p>腾讯 P3.2 高级产品经理，中山大学旅游学院管理学学士。</p>
+				<p>2010 年加入腾讯，现任 SNG 即通应用部平台运营组组长，认证面试官。群垂直场景产品负责人，曾先后负责 WebQQ、Q+、QQ 互联、兴趣部落等产品的策划与运营。</p>
+				<p>拥有超过 6 年的互联网产品经验，在产品策划、产品运营、数据分析、交互设计、项目管理等方面有较深的研究。</p>
+			</div>
+		</div>
+		<div id="member" class="section-item">
+			<h3 class="dot-line-title">学员评价</h3>
+			<div class="card-box narrow" v-for="item in discussData">
+				<div class="v-flex-start">
+        			<span><img :src="item.img" class="user-head"></span>
+        			<div class="v-flex-1 p-l-10">
+        				<div class="v-flex-between">
+        					<span>{{item.name}}</span><span>{{item.date}}</span>
+        				</div>
+        				<p>{{item.content}}</p>
+        				<span>已拿 Offer：{{item.offer}}</span>
+        			</div>
+        		</div>
+			</div>
+			<!-- <div class="card-box narrow">
+				<div class="v-flex-start">
+			        			<span><img src="https://icebear-1-001.oss-cn-shenzhen.aliyuncs.com/uploads/head/2017-03-16/58c9f7db5462c.png" class="user-head"></span>
+			        			<div class="v-flex-1 p-l-10">
+			        				<div class="v-flex-between">
+			        					<span>supermoon</span><span>2017-11-06</span>
+			        				</div>
+			        				<p>新媒体之所以是新媒体，是因为目前在大多数人的眼里，它依然是一个模糊的概念，很多人其实不知道怎么去做。那么这里，将是我们真正进入新媒体世界的大门之一。</p>
+			        				<span>已拿 Offer：</span>
+			        			</div>
+			        		</div>
+			</div> -->
+			<p class="get_more" @click="getMore">
+				查看更多
+			</p>
+		</div>
+		<div id="work" class="section-item">
+			<h3 class="dot-line-title">往期学员作品</h3>
+			   <Carousel v-model="value1" loop>
+		        <carousel-item>
+		            <div class="demo-carousel">1</div>
+		        </carousel-item>
+		        <carousel-item>
+		            <div class="demo-carousel">2</div>
+		        </carousel-item>
+		        <carousel-item>
+		            <div class="demo-carousel">3</div>
+		        </carousel-item>
+		        <carousel-item>
+		            <div class="demo-carousel">4</div>
+		        </carousel-item>
+		    </Carousel>
+			<!-- <div class="swiper-container">
+		        <div class="swiper-wrapper">
+		            <div class="swiper-slide">Slide 1</div>
+		            <div class="swiper-slide">Slide 2</div>
+		            <div class="swiper-slide">Slide 3</div>
+		            <div class="swiper-slide">Slide 4</div>
+		            <div class="swiper-slide">Slide 5</div>
+		            <div class="swiper-slide">Slide 6</div>
+		            <div class="swiper-slide">Slide 7</div>
+		            <div class="swiper-slide">Slide 8</div>
+		            <div class="swiper-slide">Slide 9</div>
+		            <div class="swiper-slide">Slide 10</div>
+		        </div>
+		        <div class="swiper-pagination"></div>
+		        <div class="swiper-button-next"></div>
+		        <div class="swiper-button-prev"></div>
+		    </div> -->
+		</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript" src="src/plugin/jquery/3.2.1/jquery.min.js"></script>
+<!-- <script type="text/javascript" src="src/plugin/Swiper-3.4.2/dist/js/swiper.min.js"></script> -->
+<script type="text/javascript" src="src/js/ice_tools.js"></script>
+<script>
+	let tools = new Tools();
+	tools.navScoll('#nav-scoll');
+	// var swiper = new Swiper('.swiper-container', {
+ //        nextButton: '.swiper-button-next',
+ //        prevButton: '.swiper-button-prev',
+ //        pagination: '.swiper-pagination',
+ //        paginationType: 'fraction'
+ //    });
+
+    let vm  = new Vue({
+        el: '#app',
+        data: {
+            value1: 0,
+            discussFlag:2,
+            discussData:[{'img':'https://icebear-1-001.oss-cn-shenzhen.aliyuncs.com/uploads/head/2017-03-16/58c9f7db5462c.png','name':'supermoon','date':'2017-11-06','content':'新媒体之所以是新媒体，是因为目前在大多数人的眼里，它依然是一个模糊的概念，很多人其实不知道怎么去做。那么这里，将是我们真正进入新媒体世界的大门之一。','offer':'腾讯，网易'},{'img':'https://icebear-1-001.oss-cn-shenzhen.aliyuncs.com/uploads/head/2017-03-16/58c9f7db5462c.png','name':'supermoon','date':'2017-11-06','content':'新媒体之所以是新媒体，是因为目前在大多数人的眼里，它依然是一个模糊的概念，很多人其实不知道怎么去做。那么这里，将是我们真正进入新媒体世界的大门之一。','offer':'腾讯，网易'}],
+            main:null
+        },
+        methods: {
+            changeTabs:function (e) {
+            	this.isTabsActive = e.target.dataset.index;
+            },
+            getMore(){
+            	this.discussData = this.discussData.concat(this.discussData);
+	          	//this.$set('main',this.main.concat(b));
+	          	this.discussFlag= this.discussFlag +2;
+            	/*let that = this;
+            	$.ajax({  
+	                type:'get',
+	                async:false,
+	                url:path+'no/noticeMobile/getSendNoticeList?&pageFlag='+ that.discussFlag,
+	                dataType: "json",
+	                success: function(msg){
+	                    //that.$set('main',_self.main.concat(msg));
+	                }
+	            });*/
+            }
+        }  
+    })
+  </script>
+<!-- {/* 页面主体 */} -->
+
+
+
+<!-- <script src="__JQUERY__"></script> -->
+
+<script>
+// $(function(){
+	
+// })
+</script>
+
+
+</body>
+</html>

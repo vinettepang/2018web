@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="UTF-8">
+  <title>白熊求助助手</title>
+  <meta name="description" content="账号登录">
+  <meta name="keyword" content="白熊求助助手，网申助手，应届生求职，应届生网申，求职攻略，网申简历">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport"  content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" >
+  <!-- <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no">
+  <meta  name="format-detection"content="email=no">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#482929"> -->
+  <!-- import stylesheet -->
+  <link rel="stylesheet" href="http://unpkg.com/iview/dist/styles/iview.css">
+  <link rel="stylesheet" href="src/css/iconstyle.css">
+  <!-- <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>-->
+  <link rel="stylesheet" href="src/css/app.css">
+  <script src="http://vuejs.org/js/vue.min.js"></script>
+  <script src="http://unpkg.com/iview/dist/iview.min.js"></script>
+  </head>
+<body>
+  <div id="message">
+    <header>
+      <i-menu mode="horizontal" theme="dark" active-name="1">
+      <div class="container">
+              <div class="layout-logo"><img src="https://icebear.me/Public/Home/images/logo-b.png" style=" width: 134px; height: 35.8px;"></div>
+              <div class="layout-nav">
+                  <menu-item name="1">
+                      <a>学院</a>
+                  </menu-item>
+                  <menu-item name="2">
+                      <a>求职</a>
+                  </menu-item>
+              </div>
+              <div class="layout-right pull-right">
+                <a href="" class="btn btn-md btn-secondary">我的课程</a>
+                <a href="javascript:void(0)" @click.stop="_messageBoxShow">
+                <Icon type="chatbox" id="messageBoxShow"></Icon>
+              </a>
+                <Dropdown>
+                <img  id="centerBoxShow" src="https://icebear-1-001.oss-cn-shenzhen.aliyuncs.com/uploads/head/2017-03-16/58c9f7db5462c.png" class="user-head">
+                <dropdown-menu slot="list">
+                    <dropdown-item>个人中心</dropdown-item>
+                    <dropdown-item>登出</dropdown-item>
+                </dropdown-menu>
+            </Dropdown>
+              </div>
+              
+               <!-- 消息通知弹出框 -->
+        <!-- <transition name="messageBox"> -->
+        <div class="message-box" style="display: none">
+          <div class="triangle"></div>
+          <div class="main">
+            <span class="title">通知</span>
+          </div>
+          <ul class="content">
+            <li class="item">
+              <img class="avater" src="https:////icebear-1-001.oss-cn-shenzhen.aliyuncs.com/uploads/head/2017-03-16/58c9f7db5462c.png"
+                alt="">
+              <span class="name">Lee<span class="teaLevel">白熊讲师</span></span>
+              <span class="detail">今日学习任务：<span class="strong">产品经理·理论课</span></span>
+            </li>
+            <li class="item">
+              <img class="avater" src="https:////icebear-1-001.oss-cn-shenzhen.aliyuncs.com/uploads/head/2017-03-16/58c9f7db5462c.png"
+                alt="">
+              <span class="name">Lee<span class="teaLevel">白熊讲师</span></span>
+              <span class="detail">今日学习任务：<span class="strong">产品经理·理论课</span></span>
+            </li>
+            <li class="item">
+              <img class="avater" src="https:////icebear-1-001.oss-cn-shenzhen.aliyuncs.com/uploads/head/2017-03-16/58c9f7db5462c.png"
+                alt="">
+              <span class="name">Lee<span class="teaLevel">白熊讲师</span></span>
+              <span class="detail">今日学习任务：<span class="strong">产品经理·理论课</span></span>
+            </li>
+          </ul>
+          <div class="footer">
+            <span class="set">设置</span>
+            <span class="seeAll">查看全部通知</span>
+          </div>
+        </div>
+        <!-- </transition> -->
+
+        <!-- 个人中心弹窗 -->
+        <!-- <transition name="centerBox"> -->
+        <div class="center-box" style="display: none">
+          <div class="triangle"></div>
+          <a href="./user_center.html" class="btn-center">个人中心</a>
+          <a class="btn-loginout">登出</a>
+        </div>
+        <!-- </transition> -->
+          </div>
+      </i-menu>
+  </header>
+    <!-- 登录弹出框 -->
+    <div class="modal" id="loginAlert" style="display:none">
+      <div class="loginAlert">
+        <a id="loginAlertHide" href="javascript:void(0)">
+          <Icon type="close-round" class="btn-close"></Icon>
+        </a>
+        <img class="weixinImg" src="" alt="">
+        <p class="about">请使用微信扫码，登录「白熊求职」</p>
+      </div>
+    </div>
+
+    <!-- 注册弹出框 -->
+    <div class="modal" id="registerAlert" style="display:none">
+      <div class="registerAlert">
+        <a id="registerAlertHide" href="javascript:void(0)">
+          <Icon type="close-round" class="btn-close"></Icon>
+        </a>
+        <p class="title">绑定/创建白熊账号</p>
+        <i-input class="number"></i-input>
+        <div class="group">
+          <i-input class="verifyCode"></i-input>
+          <i-button class="btn-getCode">获取验证码</i-button>
+        </div>
+
+        <i-button class="btn-okOrCreate" shape="circle">确认绑定/创建</i-button>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="main">
+        <span class="title">全部消息</span>
+        <span class="set">设置</span>
+      </div>
+      <div class="content">
+        <ul class="content-wrapper">
+          <li class="item">
+            <span class="time">2017.8.5</span>
+            <img class="avater" src="https://icebear-1-001.oss-cn-shenzhen.aliyuncs.com/uploads/head/2017-03-16/58c9f7db5462c.png" alt="">
+            <span class="name">Lee<span class="teaLevel">白熊讲师</span></span>
+            <span class="detail">今日学习任务：<span class="strong">产品经理·理论课 Day 2</span></span>
+          </li>
+          <li class="item">
+            <span class="time">2017.8.5</span>
+            <img class="avater" src="https://icebear-1-001.oss-cn-shenzhen.aliyuncs.com/uploads/head/2017-03-16/58c9f7db5462c.png" alt="">
+            <span class="name">Lee<span class="teaLevel">白熊讲师</span></span>
+            <span class="detail">今日学习任务：<span class="strong">产品经理·理论课 Day 2</span></span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+
+  </div>
+  <script type="text/javascript" src="src/plugin/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript" src="src/js/ice_tools.js"></script>
+  <script src="src/js/app.js"></script>
+  <script type="text/javascript">
+    new Vue({
+      el: '#message',
+      data() {
+        return {
+        }
+      },
+      methods: {
+      }
+    })
+  </script>
+</body>
+
+</html>
